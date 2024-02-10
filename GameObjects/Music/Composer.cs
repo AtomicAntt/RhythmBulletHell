@@ -19,6 +19,13 @@ public class Composer : AudioStreamPlayer
 
     public int songPosIndex = 0;
 
+    // option 2 strategy
+
+    private double _timeBegin;
+    private double _timeDelay;
+
+    public double time;
+
     public override void _Ready()
     {
         secPerBeat = 60.0 / bpm;
@@ -26,29 +33,63 @@ public class Composer : AudioStreamPlayer
 
     public override void _Process(float delta)
     {
-        songPos = GetPlaybackPosition() + AudioServer.GetTimeSinceLastMix();
-        songPos -= AudioServer.GetOutputLatency();
-        songPos *= 1000;
-        songPos = (int) songPos;
-        if (Playing && songPos >= songPositions[songPosIndex])
-        {
-            GD.Print(songPosIndex + ": " + songPos + ", So difference in accuracy is " + (songPos - songPositions[songPosIndex]));
-            GD.Print("so mean accuracy is " + (totalAccuracy / (songPosIndex+1)));
-            songPosIndex += 1;
-            totalAccuracy += totalAccuracy / (songPosIndex+1);
-        }
-    }
+        // songPos = GetPlaybackPosition() + AudioServer.GetTimeSinceLastMix();
+        // songPos -= AudioServer.GetOutputLatency();
+        // songPos *= 1000;
+        // songPos = (int) songPos;
+        // if (Playing && songPos >= songPositions[songPosIndex])
+        // {
+        //     ReportBeat();
+        //     MakeEnemyShoot();
+        // }
 
-    public void _on_Timer_timeout()
-    {
-        Play();
+        if (!Playing)
+        {
+            return;
+        }
+
+        time = OS.GetTicksMsec() - _timeBegin;
+        time = (int)Math.Max(0.0d, time - _timeDelay);
+
+        if (Playing && time >= songPositions[songPosIndex])
+        {
+            ReportBeat();
+            MakeEnemyShoot();
+        }
     }
 
     public void ReportBeat()
     {
-        // if (songPos % 100 == 0 && songPos != 0)
-        // {
-        //     GD.Print(songPos);
-        // }
+        // GD.Print(songPosIndex + ": " + songPos + ", So difference in accuracy is " + (songPos - songPositions[songPosIndex]));
+        // GD.Print("so mean accuracy is " + (totalAccuracy / (songPosIndex+1)));
+        // songPosIndex += 1;
+        // totalAccuracy += totalAccuracy / (songPosIndex+1);
+
+        GD.Print(songPosIndex + ": " + time + ", So difference in accuracy is " + (time - songPositions[songPosIndex]) + "ms!");
+        songPosIndex += 1;
+        totalAccuracy += totalAccuracy / (songPosIndex+1);
     }
+
+    public void MakeEnemyShoot()
+    {
+        foreach (Enemy enemy in GetTree().GetNodesInGroup("Enemy"))
+        {
+            enemy.Shoot();
+        }
+    }
+
+    public void SyncAndPlayMusic()
+    {
+        // option 2 strategy
+
+        _timeBegin = OS.GetTicksMsec();
+        _timeDelay = AudioServer.GetTimeToNextMix() + AudioServer.GetOutputLatency();
+        Play();
+    }
+
+    public void _on_Timer_timeout()
+    {
+        SyncAndPlayMusic();
+    }
+
 }

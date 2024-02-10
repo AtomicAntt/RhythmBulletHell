@@ -18,5 +18,13 @@ public class Enemy : Node2D
         }
     }
 
+    public void Shoot()
+    {
+        PackedScene scene = GD.Load<PackedScene>("res://GameObjects/Enemy/Projectile.tscn");
+        Projectile projectile = scene.Instance<Projectile>();
+        projectile.GlobalPosition = GlobalPosition;
+        GetParent().AddChild(projectile);
+    }
+
 
 }
