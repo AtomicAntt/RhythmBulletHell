@@ -65,7 +65,7 @@ public class Composer : AudioStreamPlayer
         // songPosIndex += 1;
         // totalAccuracy += totalAccuracy / (songPosIndex+1);
 
-        GD.Print(songPosIndex + ": " + time + ", So difference in accuracy is " + (time - songPositions[songPosIndex]) + "ms!");
+        // GD.Print(songPosIndex + ": " + time + ", So difference in accuracy is " + (time - songPositions[songPosIndex]) + "ms!");
         songPosIndex += 1;
         totalAccuracy += totalAccuracy / (songPosIndex+1);
     }

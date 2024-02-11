@@ -39,8 +39,9 @@ bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
 [sub_resource type="StyleBoxLine" id=15]
 color = Color( 1, 1, 1, 1 )
-grow_begin = 33.0
-grow_end = 32.0
+grow_begin = 16.0
+grow_end = 16.0
+thickness = 2
 
 [sub_resource type="StyleBoxLine" id=8]
 color = Color( 0, 0.670588, 1, 1 )
@@ -57,9 +58,9 @@ border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
+border_color = Color( 1, 1, 1, 1 )
 
 [sub_resource type="DynamicFont" id=17]
-size = 32
 font_data = ExtResource( 1 )
 
 [resource]
@@ -72,7 +73,6 @@ CheckButton/styles/hover = SubResource( 11 )
 CheckButton/styles/normal = SubResource( 12 )
 CheckButton/styles/pressed = SubResource( 13 )
 HSeparator/styles/separator = SubResource( 15 )
-HSlider/icons/grabber = null
 HSlider/styles/grabber_area = SubResource( 8 )
 HSlider/styles/grabber_area_highlight = SubResource( 16 )
 HSlider/styles/slider = SubResource( 10 )
