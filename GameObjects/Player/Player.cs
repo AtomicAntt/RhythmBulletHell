@@ -7,6 +7,8 @@ public class Player : KinematicBody2D
     public int speed = 200;
     public Vector2 velocity = Vector2.Zero;
 
+    
+
     public void GetInput()
     {
         velocity = Vector2.Zero;

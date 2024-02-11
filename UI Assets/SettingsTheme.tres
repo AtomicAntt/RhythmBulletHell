@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=15 format=2]
 
-[ext_resource path="res://Fonts/Roboto-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Fonts/m5x7.ttf" type="DynamicFontData" id=1]
 
 [sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
@@ -9,10 +9,6 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color( 0.87451, 0.172549, 0.101961, 1 )
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
 
 [sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
@@ -20,10 +16,6 @@ border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
 
 [sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
@@ -32,10 +24,6 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color( 0.705882, 0.823529, 0.133333, 1 )
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
 
 [sub_resource type="StyleBoxFlat" id=14]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
@@ -69,16 +57,13 @@ border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=17]
+size = 32
 font_data = ExtResource( 1 )
 
 [resource]
-default_font = SubResource( 2 )
+default_font = SubResource( 17 )
 Button/styles/hover = SubResource( 5 )
 Button/styles/normal = SubResource( 6 )
 Button/styles/pressed = SubResource( 7 )
