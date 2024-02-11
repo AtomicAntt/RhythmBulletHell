@@ -24,10 +24,10 @@ Saves="*res://Autoloads/Saves.cs"
 
 [display]
 
-window/size/width=640
-window/size/height=360
+window/size/width=960
+window/size/height=540
+window/size/fullscreen=true
 window/stretch/mode="viewport"
-window/stretch/aspect="keep"
 
 [gui]
 
