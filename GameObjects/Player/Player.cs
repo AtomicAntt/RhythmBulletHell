@@ -9,6 +9,10 @@ public class Player : KinematicBody2D
 
     [Export]
     public int speed = 300;
+
+    [Export]
+    public int lives = 3;
+
     public Vector2 velocity = Vector2.Zero;
 
     // CHILD VARIABLES
