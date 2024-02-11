@@ -47,6 +47,9 @@ Button/styles/pressed = SubResource( 3 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="MainMenu" type="Control" parent="."]
 anchor_right = 1.0
@@ -105,8 +108,10 @@ margin_right = 214.0
 margin_bottom = 208.0
 grow_horizontal = 2
 grow_vertical = 2
-rect_pivot_offset = Vector2( 445, 306 )
 mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="SettingsBackButton" type="Button" parent="Settings/SettingsPanel"]
 anchor_top = 1.0
