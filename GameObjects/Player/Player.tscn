@@ -1,508 +1,143 @@
-[gd_scene load_steps=130 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://GameObjects/Player/Player.cs" type="Script" id=1]
-[ext_resource path="res://GameAssets/Player/Ship-Player.png" type="Texture" id=2]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtBottomLeft/Ship-Player78.png" type="Texture" id=3]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtBottomLeft/Ship-Player80.png" type="Texture" id=4]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtBottomLeft/Ship-Player77.png" type="Texture" id=5]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtBottomLeft/Ship-Player81.png" type="Texture" id=6]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtBottomLeft/Ship-Player79.png" type="Texture" id=7]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtBottomRight/Ship-Player72.png" type="Texture" id=8]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtTopRight/Ship-Player62.png" type="Texture" id=9]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtTopRight/Ship-Player64.png" type="Texture" id=10]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtTopRight/Ship-Player66.png" type="Texture" id=11]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtTopLeft/Ship-Player71.png" type="Texture" id=12]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtTopRight/Ship-Player63.png" type="Texture" id=13]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtTopRight/Ship-Player65.png" type="Texture" id=14]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtTopLeft/Ship-Player70.png" type="Texture" id=15]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtTopLeft/Ship-Player69.png" type="Texture" id=16]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtUp/Ship-Player52.png" type="Texture" id=17]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtUp/Ship-Player53.png" type="Texture" id=18]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtUp/Ship-Player56.png" type="Texture" id=19]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtUp/Ship-Player55.png" type="Texture" id=20]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtUp/Ship-Player54.png" type="Texture" id=21]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtRight/Ship-Player42.png" type="Texture" id=22]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtRight/Ship-Player43.png" type="Texture" id=23]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtLeft/Ship-Player51.png" type="Texture" id=24]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtRight/Ship-Player44.png" type="Texture" id=25]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtRight/Ship-Player45.png" type="Texture" id=26]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtRight/Ship-Player46.png" type="Texture" id=27]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtTopLeft/Ship-Player67.png" type="Texture" id=28]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtTopLeft/Ship-Player68.png" type="Texture" id=29]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtDown/Ship-Player58.png" type="Texture" id=30]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtDown/Ship-Player60.png" type="Texture" id=31]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtDown/Ship-Player61.png" type="Texture" id=32]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtBottomRight/Ship-Player74.png" type="Texture" id=33]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtDown/Ship-Player57.png" type="Texture" id=34]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtIdle/Ship-Player82.png" type="Texture" id=35]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtIdle/Ship-Player85.png" type="Texture" id=36]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtLeft/Ship-Player48.png" type="Texture" id=37]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtLeft/Ship-Player49.png" type="Texture" id=38]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtBottomRight/Ship-Player75.png" type="Texture" id=39]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtIdle/Ship-Player83.png" type="Texture" id=40]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtLeft/Ship-Player50.png" type="Texture" id=41]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtDown/Ship-Player59.png" type="Texture" id=42]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtIdle/Ship-Player84.png" type="Texture" id=43]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtBottomRight/Ship-Player73.png" type="Texture" id=44]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtLeft/Ship-Player47.png" type="Texture" id=45]
-[ext_resource path="res://GameAssets/Player/HurtAnim/HurtBottomRight/Ship-Player76.png" type="Texture" id=46]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2, 2 )
 
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 512, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 2 )
-region = Rect2( 64, 512, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 2 )
-region = Rect2( 128, 512, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 2 )
-region = Rect2( 192, 512, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 2 )
-region = Rect2( 256, 512, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 448, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 2 )
-region = Rect2( 64, 448, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 2 )
-region = Rect2( 128, 448, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 2 )
-region = Rect2( 192, 448, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 2 )
-region = Rect2( 256, 448, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 1600, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 2 )
-region = Rect2( 64, 1600, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 2 )
-region = Rect2( 128, 1600, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=17]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 1536, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=18]
-atlas = ExtResource( 2 )
-region = Rect2( 64, 1536, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=19]
-atlas = ExtResource( 2 )
-region = Rect2( 128, 1536, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 1216, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 2 )
-region = Rect2( 64, 1216, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 2 )
-region = Rect2( 128, 1216, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 1344, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=24]
-atlas = ExtResource( 2 )
-region = Rect2( 64, 1344, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=25]
-atlas = ExtResource( 2 )
-region = Rect2( 128, 1344, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=26]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 1280, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=27]
-atlas = ExtResource( 2 )
-region = Rect2( 64, 1280, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=28]
-atlas = ExtResource( 2 )
-region = Rect2( 128, 1280, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=29]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 1408, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=30]
-atlas = ExtResource( 2 )
-region = Rect2( 64, 1408, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=31]
-atlas = ExtResource( 2 )
-region = Rect2( 128, 1408, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=32]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 1472, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=33]
-atlas = ExtResource( 2 )
-region = Rect2( 64, 1472, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=34]
-atlas = ExtResource( 2 )
-region = Rect2( 128, 1472, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=35]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 1152, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=36]
-atlas = ExtResource( 2 )
-region = Rect2( 64, 1152, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=37]
-atlas = ExtResource( 2 )
-region = Rect2( 128, 1152, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=86]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 1664, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=87]
-atlas = ExtResource( 2 )
-region = Rect2( 64, 1664, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=88]
-atlas = ExtResource( 2 )
-region = Rect2( 128, 1664, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=89]
-atlas = ExtResource( 2 )
-region = Rect2( 192, 1664, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=90]
-atlas = ExtResource( 2 )
-region = Rect2( 256, 1664, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=91]
-atlas = ExtResource( 2 )
-region = Rect2( 320, 1664, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=92]
-atlas = ExtResource( 2 )
-region = Rect2( 384, 1664, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=93]
-atlas = ExtResource( 2 )
-region = Rect2( 448, 1664, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=94]
-atlas = ExtResource( 2 )
-region = Rect2( 512, 1664, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=95]
-atlas = ExtResource( 2 )
-region = Rect2( 576, 1664, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=96]
-atlas = ExtResource( 2 )
-region = Rect2( 640, 1664, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=97]
-atlas = ExtResource( 2 )
-region = Rect2( 704, 1664, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=98]
-atlas = ExtResource( 2 )
-region = Rect2( 768, 1664, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=99]
-atlas = ExtResource( 2 )
-region = Rect2( 832, 1664, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=100]
-atlas = ExtResource( 2 )
-region = Rect2( 896, 1664, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=38]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 256, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=39]
-atlas = ExtResource( 2 )
-region = Rect2( 64, 256, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=40]
-atlas = ExtResource( 2 )
-region = Rect2( 128, 256, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=41]
-atlas = ExtResource( 2 )
-region = Rect2( 192, 256, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=42]
-atlas = ExtResource( 2 )
-region = Rect2( 256, 256, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=60]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 128, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=61]
-atlas = ExtResource( 2 )
-region = Rect2( 64, 128, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=62]
-atlas = ExtResource( 2 )
-region = Rect2( 128, 128, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=63]
-atlas = ExtResource( 2 )
-region = Rect2( 192, 128, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=64]
-atlas = ExtResource( 2 )
-region = Rect2( 256, 128, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=65]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 64, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=66]
-atlas = ExtResource( 2 )
-region = Rect2( 64, 64, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=67]
-atlas = ExtResource( 2 )
-region = Rect2( 128, 64, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=68]
-atlas = ExtResource( 2 )
-region = Rect2( 192, 64, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=69]
-atlas = ExtResource( 2 )
-region = Rect2( 256, 64, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=70]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 384, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=71]
-atlas = ExtResource( 2 )
-region = Rect2( 64, 384, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=72]
-atlas = ExtResource( 2 )
-region = Rect2( 128, 384, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=73]
-atlas = ExtResource( 2 )
-region = Rect2( 192, 384, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=74]
-atlas = ExtResource( 2 )
-region = Rect2( 256, 384, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=75]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 320, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=76]
-atlas = ExtResource( 2 )
-region = Rect2( 64, 320, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=77]
-atlas = ExtResource( 2 )
-region = Rect2( 128, 320, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=78]
-atlas = ExtResource( 2 )
-region = Rect2( 192, 320, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=79]
-atlas = ExtResource( 2 )
-region = Rect2( 256, 320, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=80]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 192, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=81]
-atlas = ExtResource( 2 )
-region = Rect2( 64, 192, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=82]
-atlas = ExtResource( 2 )
-region = Rect2( 128, 192, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=83]
-atlas = ExtResource( 2 )
-region = Rect2( 192, 192, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=84]
-atlas = ExtResource( 2 )
-region = Rect2( 256, 192, 64, 64 )
-
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"frames": [  ],
 "loop": true,
 "name": "BottomLeft",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"frames": [  ],
 "loop": true,
 "name": "BottomRight",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
+"frames": [  ],
 "loop": true,
 "name": "DashBottomLeft",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
+"frames": [  ],
 "loop": true,
 "name": "DashBottomRight",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ) ],
+"frames": [  ],
 "loop": true,
 "name": "DashDown",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 23 ), SubResource( 24 ), SubResource( 25 ) ],
+"frames": [  ],
 "loop": true,
 "name": "DashLeft",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 26 ), SubResource( 27 ), SubResource( 28 ) ],
+"frames": [  ],
 "loop": true,
 "name": "DashRight",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
+"frames": [  ],
 "loop": true,
 "name": "DashTopLeft",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ) ],
+"frames": [  ],
 "loop": true,
 "name": "DashTopRight",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 35 ), SubResource( 36 ), SubResource( 37 ) ],
+"frames": [  ],
 "loop": true,
 "name": "DashUp",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 86 ), SubResource( 87 ), SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ), SubResource( 93 ), SubResource( 94 ), SubResource( 95 ), SubResource( 96 ), SubResource( 97 ), SubResource( 98 ), SubResource( 99 ), SubResource( 100 ) ],
+"frames": [  ],
 "loop": false,
 "name": "Destroyed",
 "speed": 16.0
 }, {
-"frames": [ SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ) ],
+"frames": [  ],
 "loop": true,
 "name": "Down",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 4 ), ExtResource( 6 ) ],
+"frames": [  ],
 "loop": true,
 "name": "HurtBottomLeft",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 44 ), ExtResource( 33 ), ExtResource( 39 ), ExtResource( 46 ) ],
+"frames": [  ],
 "loop": true,
 "name": "HurtBottomRight",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 34 ), ExtResource( 30 ), ExtResource( 42 ), ExtResource( 31 ), ExtResource( 32 ) ],
+"frames": [  ],
 "loop": true,
 "name": "HurtDown",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 35 ), ExtResource( 40 ), ExtResource( 43 ), ExtResource( 36 ) ],
+"frames": [  ],
 "loop": true,
 "name": "HurtIdle",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 45 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 41 ), ExtResource( 24 ) ],
+"frames": [  ],
 "loop": true,
 "name": "HurtLeft",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ) ],
+"frames": [  ],
 "loop": true,
 "name": "HurtRight",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 28 ), ExtResource( 29 ), ExtResource( 16 ), ExtResource( 15 ), ExtResource( 12 ) ],
+"frames": [  ],
 "loop": true,
 "name": "HurtTopLeft",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 14 ), ExtResource( 11 ) ],
+"frames": [  ],
 "loop": true,
 "name": "HurtTopRight",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 21 ), ExtResource( 20 ), ExtResource( 19 ) ],
+"frames": [  ],
 "loop": true,
 "name": "HurtUp",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 2 ) ],
+"frames": [  ],
 "loop": true,
 "name": "Idle",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ) ],
+"frames": [  ],
 "loop": true,
 "name": "Left",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
+"frames": [  ],
 "loop": true,
 "name": "Right",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 70 ), SubResource( 71 ), SubResource( 72 ), SubResource( 73 ), SubResource( 74 ) ],
+"frames": [  ],
 "loop": true,
 "name": "TopLeft",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 75 ), SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 79 ) ],
+"frames": [  ],
 "loop": true,
 "name": "TopRight",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 80 ), SubResource( 81 ), SubResource( 82 ), SubResource( 83 ), SubResource( 84 ) ],
+"frames": [  ],
 "loop": true,
 "name": "Up",
 "speed": 12.0
@@ -522,7 +157,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
 animation = "Destroyed"
-frame = 14
+frame = -1
 playing = true
 
 [node name="Hitbox" type="Area2D" parent="." groups=["PlayerHitbox"]]

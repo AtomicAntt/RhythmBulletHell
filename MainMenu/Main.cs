@@ -111,6 +111,7 @@ public class Main : Control
     public void _on_StartButton_pressed()
     {
         LoadLevel("Level1");
+        mainMenuMusic.Stop();
         clickPlaySound.Play();
     }
 

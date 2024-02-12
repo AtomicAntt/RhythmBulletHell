@@ -75,18 +75,21 @@ alignment = 1
 [node name="StartButton" type="Button" parent="MainMenu/MenuButtons"]
 margin_right = 176.0
 margin_bottom = 17.0
+focus_mode = 0
 text = "Play"
 
 [node name="SettingsButton" type="Button" parent="MainMenu/MenuButtons"]
 margin_top = 32.0
 margin_right = 176.0
 margin_bottom = 49.0
+focus_mode = 0
 text = "Settings"
 
 [node name="QuitButton" type="Button" parent="MainMenu/MenuButtons"]
 margin_top = 64.0
 margin_right = 176.0
 margin_bottom = 81.0
+focus_mode = 0
 text = "Quit"
 
 [node name="Settings" type="Control" parent="."]
