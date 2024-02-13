@@ -7,23 +7,62 @@ data = '''
 - StartTime: 18
   Lane: 1
   KeySounds: []
+- StartTime: 189
+  Lane: 1
+  KeySounds: []
 - StartTime: 360
   Lane: 4
+  KeySounds: []
+- StartTime: 360
+  Lane: 2
+  KeySounds: []
+- StartTime: 532
+  Lane: 2
   KeySounds: []
 - StartTime: 703
   Lane: 4
   KeySounds: []
+- StartTime: 703
+  Lane: 3
+  KeySounds: []
+- StartTime: 875
+  Lane: 3
+  KeySounds: []
 - StartTime: 1046
   Lane: 4
+  KeySounds: []
+- StartTime: 1046
+  Lane: 5
+  KeySounds: []
+- StartTime: 1218
+  Lane: 5
   KeySounds: []
 - StartTime: 1389
   Lane: 4
   KeySounds: []
+- StartTime: 1389
+  Lane: 6
+  KeySounds: []
+- StartTime: 1560
+  Lane: 6
+  KeySounds: []
 - StartTime: 1732
   Lane: 4
   KeySounds: []
+- StartTime: 1732
+  Lane: 7
+  KeySounds: []
+- StartTime: 1903
+  Lane: 7
+  KeySounds: []
 - StartTime: 2075
   Lane: 4
+  KeySounds: []
+- StartTime: 2075
+  Lane: 1
+  KeySounds: []
+- StartTime: 2246
+  Lane: 1
   KeySounds: []
 - StartTime: 2418
   Lane: 4

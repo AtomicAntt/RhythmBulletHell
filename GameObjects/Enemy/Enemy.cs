@@ -1,13 +1,26 @@
 using Godot;
 using System;
+using System.Linq;
 
 public class Enemy : Node2D
 {
     public enum States {MIRROR, IDLE}
 
     [Export]
-    public bool spiraling = false;
+    public int[] songPositions1;
+    [Export]
+    public int[] songPositions2;
+    [Export]
+    public int[] songPositions3;
+    [Export]
+    public int[] songPositions4;
+    [Export]
+    public int[] songPositions5;
+    [Export]
+    public int[] songPositions6;
 
+    [Export]
+    public bool spiraling = false;
     [Export]
     public int radius = 90;
     [Export]
@@ -187,6 +200,79 @@ public class Enemy : Node2D
             projectile.homing = true;
             GetParent().AddChild(projectile);
         }
+    }
+
+    // Even song positions move to odd song positions, so index 0 goes to index 1, index 2 goes to index 3
+    public void CheckAndMovePositions(int songPosition)
+    {
+        // First, lets see if this song position is in any of the arrays...
+        int positionAt = -1;
+        int[] positionsArray;
+        int[][] allPositionsArrays = { songPositions1, songPositions2, songPositions3, songPositions4, songPositions5, songPositions6 };
+
+        for (int i = 0; i < allPositionsArrays.Length; i++)
+        {
+            if (allPositionsArrays[i].Contains(songPosition) && Array.IndexOf(allPositionsArrays[i], songPosition) % 2 == 0) // Song position in any of the array and even?
+            {
+                    positionAt = i + 1; // If so, we know which position node in the game to go for..
+                    positionsArray = allPositionsArrays[1]; // And we also need this information to know the final destination, which is the next value (assume there will always be)
+                    break;
+            }
+        }
+
+        
+
+
+
+
+        // if (songPositions1.Contains(songPosition))
+        // {
+        //     if (Array.IndexOf(songPositions1, songPosition) % 2 == 0) // check if even
+        //     {
+        //         positionAt = 1;
+        //         positionsArray = songPositions1;
+        //     }
+        // }
+        // else if (songPositions2.Contains(songPosition))
+        // {
+        //     if (Array.IndexOf(songPositions2, songPosition) % 2 == 0) // check if even
+        //     {
+        //         positionAt = 2;
+        //         positionsArray = songPositions2;
+        //     }
+        // }
+        // else if (songPositions3.Contains(songPosition))
+        // {
+        //     if (Array.IndexOf(songPositions3, songPosition) % 2 == 0) // check if even
+        //     {
+        //         positionAt = 3;
+        //         positionsArray = songPositions3;
+        //     }
+        // }
+        // else if (songPositions4.Contains(songPosition))
+        // {
+        //     if (Array.IndexOf(songPositions4, songPosition) % 2 == 0) // check if even
+        //     {
+        //         positionAt = 4;
+        //         positionsArray = songPositions4;
+        //     }
+        // }
+        // else if (songPositions5.Contains(songPosition))
+        // {
+        //     if (Array.IndexOf(songPositions5, songPosition) % 2 == 0) // check if even
+        //     {
+        //         positionAt = 5;
+        //         positionsArray = songPositions5;
+        //     }
+        // }
+        // else if (songPositions6.Contains(songPosition))
+        // {
+        //     if (Array.IndexOf(songPositions6, songPosition) % 2 == 0) // check if even
+        //     {
+        //         positionAt = 6;
+        //         positionsArray = songPositions6;
+        //     }
+        // }
     }
 
 
