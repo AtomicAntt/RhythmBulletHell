@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Ship-Player56.png-9067c4fc95dd0bb2762dffb7e31c1457.stex"
+path="res://.import/Ship.png-3740ca1e942536d4e0fbf3fd5ad407cf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GameAssets/Player/HurtAnim/HurtUp/Ship-Player56.png"
-dest_files=[ "res://.import/Ship-Player56.png-9067c4fc95dd0bb2762dffb7e31c1457.stex" ]
+source_file="res://GameAssets/Player/Ship.png"
+dest_files=[ "res://.import/Ship.png-3740ca1e942536d4e0fbf3fd5ad407cf.stex" ]
 
 [params]
 

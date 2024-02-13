@@ -120,7 +120,7 @@ public class Player : KinematicBody2D
 
     // Some variables PhysicsProcess will use
     private float _hurtTime = 0.0f; // tracker
-    private const float _hurtDuration = 0.415f; // (5 frames / 12 FPS = 0.41666...)
+    private const float _hurtDuration = 0.75f; // ((6 frames / 16) * 2 FPS = 0.75)
 
     private float _dashTime = 0.0f; // tracker
     private const float _dashDuration = 0.25f; // (3 frames / 12 FPS = 0.25)
@@ -145,7 +145,17 @@ public class Player : KinematicBody2D
             case States.NORMAL:
                 // Looks like a lot but its just getting the direction string from the inputs and then playing the correct direction according to the input.
                 // Remember, the GetInput() in this nested method is the reason why velocity changes when you press inputs.
-                _animatedSprite.Play(ReturnDirectionString(GetInput()));
+                // _animatedSprite.Play(ReturnDirectionString(GetInput()));
+
+                if (Math.Abs(GetInput().Length()) >= 1)
+                {
+                    _animatedSprite.Play("Flight");
+                }
+                else
+                {
+                    _animatedSprite.Play("Idle");
+                }
+
                 if (Input.IsActionJustPressed("dash") && Math.Abs(GetInput().Length()) >= 1) // Player presses dash button & moving
                 {
                     state = States.DASH;
@@ -187,7 +197,10 @@ public class Player : KinematicBody2D
                 }
                 _hurtTime += delta;
 
-                _animatedSprite.Play("Hurt"+ReturnDirectionString(GetInput()));
+                // _animatedSprite.Play("Hurt"+ReturnDirectionString(GetInput()));
+
+                GetInput();
+                _animatedSprite.Play("Hurt");
                 break;
             case States.DEAD:
                 break;

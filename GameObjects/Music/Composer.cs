@@ -15,6 +15,9 @@ public class Composer : AudioStreamPlayer
     public int[] songPositions = {18, 360, 703, 1046, 1389, 1732, 2075, 2418, 2760, 3103, 3446, 3789, 4132, 4475, 4818, 4989, 5160, 5503, 5846, 6189, 6532, 6875, 7218, 7560, 7903, 8246, 8589, 8932, 9275, 9618, 9960, 10303, 10475, 10646, 11332, 12018, 
     12703, 13389, 14075, 14760, 15446, 16132};
 
+    [Export]
+    public int[] test;
+
     public int totalAccuracy = 0;
 
     public int songPosIndex = 0;
@@ -74,7 +77,7 @@ public class Composer : AudioStreamPlayer
     {
         foreach (Enemy enemy in GetTree().GetNodesInGroup("Enemy"))
         {
-            enemy.Shoot();
+            enemy.ShootShotgun();
         }
     }
 

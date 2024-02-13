@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Ship-Player77.png-93b2eff5ab17203a54f0f95e18c90956.stex"
+path="res://.import/flighting.png-729b2d5e87d8e78330ea29e1db6ce65e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GameAssets/Player/HurtAnim/HurtBottomLeft/Ship-Player77.png"
-dest_files=[ "res://.import/Ship-Player77.png-93b2eff5ab17203a54f0f95e18c90956.stex" ]
+source_file="res://GameAssets/Player/flighting.png"
+dest_files=[ "res://.import/flighting.png-729b2d5e87d8e78330ea29e1db6ce65e.stex" ]
 
 [params]
 

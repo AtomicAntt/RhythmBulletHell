@@ -12,9 +12,13 @@ animations = [ {
 
 [node name="Enemy" type="Node2D" groups=["Enemy"]]
 position = Vector2( 0, -451 )
+rotation = 1.5708
 script = ExtResource( 2 )
+rotationSpeed = 70
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -17 )
 frames = SubResource( 2 )
 flip_v = true
+
+[node name="Rotater" type="Node2D" parent="."]

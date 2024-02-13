@@ -1,9 +1,11 @@
 import json
 
 data = '''
-HitObjects:
 - StartTime: 18
   Lane: 4
+  KeySounds: []
+- StartTime: 18
+  Lane: 1
   KeySounds: []
 - StartTime: 360
   Lane: 4
@@ -45,9 +47,6 @@ HitObjects:
   Lane: 4
   KeySounds: []
 - StartTime: 4818
-  Lane: 4
-  KeySounds: []
-- StartTime: 4989
   Lane: 4
   KeySounds: []
 - StartTime: 5160
@@ -98,9 +97,6 @@ HitObjects:
 - StartTime: 10303
   Lane: 4
   KeySounds: []
-- StartTime: 10475
-  Lane: 4
-  KeySounds: []
 - StartTime: 10646
   Lane: 4
   KeySounds: []
@@ -128,7 +124,65 @@ HitObjects:
 - StartTime: 16132
   Lane: 4
   KeySounds: []
+- StartTime: 16475
+  Lane: 4
+  KeySounds: []
+- StartTime: 17160
+  Lane: 4
+  KeySounds: []
+- StartTime: 17846
+  Lane: 4
+  KeySounds: []
+- StartTime: 18532
+  Lane: 4
+  KeySounds: []
+- StartTime: 19218
+  Lane: 4
+  KeySounds: []
+- StartTime: 19903
+  Lane: 4
+  KeySounds: []
+- StartTime: 20589
+  Lane: 4
+  KeySounds: []
+- StartTime: 21275
+  Lane: 4
+  KeySounds: []
+- StartTime: 21960
+  Lane: 4
+  KeySounds: []
+- StartTime: 22303
+  Lane: 4
+  KeySounds: []
+- StartTime: 22989
+  Lane: 4
+  KeySounds: []
+- StartTime: 23675
+  Lane: 4
+  KeySounds: []
+- StartTime: 24360
+  Lane: 4
+  KeySounds: []
+- StartTime: 25046
+  Lane: 4
+  KeySounds: []
+- StartTime: 25732
+  Lane: 4
+  KeySounds: []
+- StartTime: 26418
+  Lane: 4
+  KeySounds: []
+- StartTime: 27103
+  Lane: 4
+  KeySounds: []
 '''
+lane1Data = []
+lane2Data = []
+lane3Data = []
+lane4Data = []
+lane5Data = []
+lane6Data = []
+lane7Data = []
 
 # Split the data into individual lines
 lines = data.strip().split('\n')
@@ -137,10 +191,14 @@ lines = data.strip().split('\n')
 result_array = []
 
 # Loop through each line and extract StartTime value if Lane is 4
-for i in range(len(lines)):
-    if lines[i].startswith("- StartTime:") and "Lane: 4" in lines[i + 1]:
-        start_time = int(lines[i].split(":")[1].strip())
-        result_array.append(start_time)
-
-# Print the resulting array
-print(result_array)
+for j in range(7):
+    for i in range(len(lines)):
+    # if lines[i].startswith("- StartTime:") and "Lane: 4" in lines[i + 1]:
+      if lines[i].startswith("- StartTime:") and "Lane: "+str((j+1)) in lines[i+1]:
+          start_time = int(lines[i].split(":")[1].strip())
+          result_array.append(start_time)
+          
+      # Print the resulting array
+    if (i == len(lines)-1):
+      print("Array " + str(j+1) + ": " + str(result_array))
+      result_array.clear()
