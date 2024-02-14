@@ -29,9 +29,17 @@ public class Main : Control
     private Panel _settingsPanel;
     private ColorRect _settingsBackground;
 
+    // ---------- Initialized Game UI references ----------
+
+    public Control gameUI;
+    public TextureProgress healthBar;
+    public TextureProgress damageBar;
+    public Label healthLabel;
+
     // ---------- Initialized Autoloads ----------
 
     private Saves _saves;
+    private Signals _signals;
 
     // ---------- Methods to call on ready, which also loads saved parts of the game as the game is getting started ----------
 
@@ -61,14 +69,34 @@ public class Main : Control
         _settingsPanel = GetNode<Panel>("Settings/SettingsPanel");
         _settingsBackground = GetNode<ColorRect>("Settings/SettingsBackground");
 
+        gameUI = GetNode<Control>("Levels/CanvasLayer/GameUI");
+        healthBar = GetNode<TextureProgress>("Levels/CanvasLayer/GameUI/VBoxContainer/HealthBar");
+        damageBar = GetNode<TextureProgress>("Levels/CanvasLayer/GameUI/VBoxContainer/HealthBar/DamageBar");
+        healthLabel = GetNode<Label>("Levels/CanvasLayer/GameUI/VBoxContainer/HealthLabel");
+
         // Initialize needed autoloads
         _saves = GetNode<Saves>("/root/Saves");
+        _signals = GetNode<Signals>("/root/Signals");
+
+        _signals.Connect("UpdateHealth", this, "SetHealth");
 
         // Load values like settings that were set.
         _saves.LoadGame();
 
         // Play music after loading to allow it to play at the volume setting the user saved.
         mainMenuMusic.Play();
+    }
+
+    // ---------- GAME UI HANDLING ----------
+
+    public void SetHealth(int value)
+    {
+        healthBar.Value = value;
+
+        SceneTreeTween tween = GetTree().CreateTween();
+        tween.TweenProperty(damageBar, "value", (float)value, 0.5f);
+
+        healthLabel.Text = value + "/100";
     }
 
     // ---------- Methods to handle loading and unloading levels ----------
@@ -111,6 +139,7 @@ public class Main : Control
     public void _on_StartButton_pressed()
     {
         LoadLevel("Level1");
+        gameUI.Visible = true;
         mainMenuMusic.Stop();
         clickPlaySound.Play();
     }

@@ -20,6 +20,10 @@ public class Player : KinematicBody2D
 
     public Vector2 velocity = Vector2.Zero;
 
+    // AUTOLOAD
+
+    private Signals _signals;
+
     // CHILD VARIABLES
 
     private AnimatedSprite _animatedSprite;
@@ -28,6 +32,9 @@ public class Player : KinematicBody2D
     {
         // Initialize all child variables
         _animatedSprite = GetNode<AnimatedSprite>("AnimatedSprite");
+
+        // Initialize autoloads
+        _signals = GetNode<Signals>("/root/Signals");
     }
 
     // HEALTH RELATED METHODS
@@ -38,6 +45,8 @@ public class Player : KinematicBody2D
         {
             state = States.HURT;
             health -= damageTaken;
+
+            _signals.EmitSignal("UpdateHealth", health);
 
             if (health <= 0)
             {

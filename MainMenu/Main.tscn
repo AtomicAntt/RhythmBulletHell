@@ -211,6 +211,7 @@ bus = "BGM"
 [node name="CanvasLayer" type="CanvasLayer" parent="Levels"]
 
 [node name="GameUI" type="Control" parent="Levels/CanvasLayer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -222,24 +223,24 @@ margin_bottom = 40.0
 rect_scale = Vector2( 2, 2 )
 custom_constants/separation = -7
 
-[node name="Label" type="Label" parent="Levels/CanvasLayer/GameUI/VBoxContainer"]
+[node name="HealthLabel" type="Label" parent="Levels/CanvasLayer/GameUI/VBoxContainer"]
 margin_right = 50.0
 margin_bottom = 13.0
-text = "40/100"
+text = "100/100"
 align = 1
 
 [node name="HealthBar" type="TextureProgress" parent="Levels/CanvasLayer/GameUI/VBoxContainer"]
 margin_top = 6.0
 margin_right = 50.0
 margin_bottom = 31.0
-value = 40.0
+value = 100.0
 texture_progress = ExtResource( 8 )
 
 [node name="DamageBar" type="TextureProgress" parent="Levels/CanvasLayer/GameUI/VBoxContainer/HealthBar"]
 show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-value = 50.0
+value = 100.0
 texture_under = ExtResource( 6 )
 texture_progress = ExtResource( 7 )
 
