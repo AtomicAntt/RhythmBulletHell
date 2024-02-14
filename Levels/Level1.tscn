@@ -18,7 +18,7 @@ current = true
 [node name="Player" parent="." instance=ExtResource( 2 )]
 
 [node name="Enemy" parent="." instance=ExtResource( 1 )]
-position = Vector2( -30, -236 )
+position = Vector2( -25, -202 )
 songPositions1 = PoolIntArray( 18, 189, 2075, 2246 )
 songPositions2 = PoolIntArray( 360, 532 )
 songPositions3 = PoolIntArray( 703, 875 )
@@ -27,7 +27,6 @@ songPositions5 = PoolIntArray( 1389, 1560 )
 songPositions6 = PoolIntArray( 1732, 1903 )
 radius = 30
 rotationSpeed = 200
-state = 0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -41,26 +40,26 @@ stretch_mode = 2
 
 [node name="Positions" type="Node2D" parent="."]
 
-[node name="EnemyPosition" parent="Positions" instance=ExtResource( 6 )]
+[node name="EnemyPosition" parent="Positions" groups=["1"] instance=ExtResource( 6 )]
 position = Vector2( -366, -192 )
 positionNumber = 1
 
-[node name="EnemyPosition2" parent="Positions" instance=ExtResource( 6 )]
+[node name="EnemyPosition2" parent="Positions" groups=["2"] instance=ExtResource( 6 )]
 position = Vector2( -366, 20 )
 positionNumber = 2
 
-[node name="EnemyPosition3" parent="Positions" instance=ExtResource( 6 )]
+[node name="EnemyPosition3" parent="Positions" groups=["3"] instance=ExtResource( 6 )]
 position = Vector2( -366, 242 )
 positionNumber = 3
 
-[node name="EnemyPosition4" parent="Positions" instance=ExtResource( 6 )]
+[node name="EnemyPosition4" parent="Positions" groups=["4"] instance=ExtResource( 6 )]
 position = Vector2( 364, -202 )
 positionNumber = 4
 
-[node name="EnemyPosition5" parent="Positions" instance=ExtResource( 6 )]
+[node name="EnemyPosition5" parent="Positions" groups=["5"] instance=ExtResource( 6 )]
 position = Vector2( 364, 10 )
 positionNumber = 5
 
-[node name="EnemyPosition6" parent="Positions" instance=ExtResource( 6 )]
+[node name="EnemyPosition6" parent="Positions" groups=["6"] instance=ExtResource( 6 )]
 position = Vector2( 364, 232 )
 positionNumber = 6

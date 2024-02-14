@@ -12,7 +12,9 @@ public class Composer : AudioStreamPlayer
 
     // private int previousSongPos = 0;
 
+    [Export]
     public int[] songPositions = {18, 360, 703, 1046, 1389, 1732, 2075, 2418, 2760, 3103, 3446, 3789, 4132, 4475, 4818, 5160, 5503, 5846, 6189, 6532, 6875, 7218, 7560, 7903, 8246, 8589, 8932, 9275, 9618, 9960, 10303, 10646, 11332, 12018, 12703, 13389, 14075, 14760, 15446, 16132, 16475, 17160, 17846, 18532, 19218, 19903, 20589, 21275, 21960, 22303, 22989, 23675, 24360, 25046, 25732, 26418, 27103};
+
 
     public int totalAccuracy = 0;
 
@@ -50,10 +52,16 @@ public class Composer : AudioStreamPlayer
         time = OS.GetTicksMsec() - _timeBegin;
         time = (int)Math.Max(0.0d, time - _timeDelay);
 
+        // experiment and it might be a downer for performance
+
+        CheckEnemyMovement((int)time);
+
+
         if (Playing && time >= songPositions[songPosIndex])
         {
             ReportBeat();
             MakeEnemyShoot();
+            // CheckEnemyMovement((int)songPos);
         }
     }
 
@@ -73,7 +81,15 @@ public class Composer : AudioStreamPlayer
     {
         foreach (Enemy enemy in GetTree().GetNodesInGroup("Enemy"))
         {
-            enemy.ShootShotgun();
+            enemy.ShootSpiral();
+        }
+    }
+
+    public void CheckEnemyMovement(int givenSongPosition)
+    {
+        foreach (Enemy enemy in GetTree().GetNodesInGroup("Enemy"))
+        {
+            enemy.CheckAndMovePositions(givenSongPosition);
         }
     }
 

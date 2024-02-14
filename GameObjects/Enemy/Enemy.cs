@@ -19,6 +19,13 @@ public class Enemy : Node2D
     [Export]
     public int[] songPositions6;
 
+    public SongPosition indexSongPos1 = new SongPosition(), indexSongPos2 = new SongPosition(), indexSongPos3 = new SongPosition(), indexSongPos4 = new SongPosition(), indexSongPos5 = new SongPosition(), indexSongPos6 = new SongPosition();
+
+    public class SongPosition
+    {
+        public int Index = 0;
+    }
+
     [Export]
     public bool spiraling = false;
     [Export]
@@ -207,18 +214,47 @@ public class Enemy : Node2D
     {
         // First, lets see if this song position is in any of the arrays...
         int positionAt = -1;
-        int[] positionsArray;
         int[][] allPositionsArrays = { songPositions1, songPositions2, songPositions3, songPositions4, songPositions5, songPositions6 };
+        SongPosition[] allIndexArrays = {indexSongPos1, indexSongPos2, indexSongPos3, indexSongPos4, indexSongPos5, indexSongPos6};
+        int[] positionsArray = allPositionsArrays[0];// initialize just to avoid error
+        int positionNumber = -1; // The position2d node's group
 
         for (int i = 0; i < allPositionsArrays.Length; i++)
         {
-            if (allPositionsArrays[i].Contains(songPosition) && Array.IndexOf(allPositionsArrays[i], songPosition) % 2 == 0) // Song position in any of the array and even?
+            // complex but for each array, look at their corresponding index and that value is the target position we want to hit
+            int targetSongPosition = -1; 
+            // VALID INDEX? also, this is some code that is getting somewhere lol
+            // Only explanation is that we see if the length of the positions array we looking at right now is not as big as the corresponding index, has to be less or it goes too far
+            if (allIndexArrays[i].Index < allPositionsArrays[i].Length)
             {
-                    positionAt = i + 1; // If so, we know which position node in the game to go for..
-                    positionsArray = allPositionsArrays[1]; // And we also need this information to know the final destination, which is the next value (assume there will always be)
+                targetSongPosition = allPositionsArrays[i][allIndexArrays[i].Index];
+            }
+            // GD.Print(targetSongPosition);
+            if (songPosition >= targetSongPosition && targetSongPosition != -1) // Song position in any of the array and even?
+            {
+                    // GD.Print(targetSongPosition);
+                    positionAt = allIndexArrays[i].Index + 1; // Index at the same array that the next song position is located
+                    positionNumber = i+1;
+                    allIndexArrays[i].Index = allIndexArrays[i].Index + 2; // So next time, the next note is a starting position
+                    GD.Print(allIndexArrays[i].Index);
+                    positionsArray = allPositionsArrays[i]; // And we also need this information to know the final destination, which is the next value (assume there will always be)
                     break;
             }
         }
+
+        if (positionAt != -1)
+        {
+            GD.Print("Attempting to tween: " + songPosition);
+            GD.Print("Attempting to tween for this seconds: " + (float) (positionsArray[positionAt] - positionsArray[positionAt-1])/1000);
+
+            SceneTreeTween tween = GetTree().CreateTween();
+            EnemyPosition enemyPosition = GetTree().GetNodesInGroup(positionNumber.ToString())[0] as EnemyPosition;
+
+            GD.Print("TO THIS POSITION: " + enemyPosition.GlobalPosition);
+
+            tween.TweenProperty(this, "position", enemyPosition.GlobalPosition, (float) (positionsArray[positionAt] - positionsArray[positionAt-1])/1000);
+        }
+        
 
         
 
