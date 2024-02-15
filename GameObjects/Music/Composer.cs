@@ -66,7 +66,7 @@ public class Composer : AudioStreamPlayer
 
         foreach (Enemy enemy in GetTree().GetNodesInGroup("Enemy"))
         {
-            if (enemy.songPositions.Length > enemy.songPosIndex-1) // If the index is too big, you wouldnt want to do the next if statement
+            if (enemy.songPositions.Length > enemy.songPosIndex) // If the index is too big, you wouldnt want to do the next if statement
             {
                 if (time >= enemy.songPositions[enemy.songPosIndex])
                 {

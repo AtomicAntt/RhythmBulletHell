@@ -1,200 +1,239 @@
 import json
 
 data = '''
+- StartTime: 9600
+  Lane: 4
+  KeySounds: []
+- StartTime: 10050
+  Lane: 4
+  KeySounds: []
+- StartTime: 10125
+  Lane: 2
+  KeySounds: []
+- StartTime: 10725
+  Lane: 2
+  KeySounds: []
+- StartTime: 10800
+  Lane: 4
+  KeySounds: []
+- StartTime: 11250
+  Lane: 4
+  KeySounds: []
+- StartTime: 11325
+  Lane: 3
+  KeySounds: []
+- StartTime: 11925
+  Lane: 3
+  KeySounds: []
+- StartTime: 12000
+  Lane: 4
+  KeySounds: []
+- StartTime: 12450
+  Lane: 4
+  KeySounds: []
+- StartTime: 12525
+  Lane: 2
+  KeySounds: []
+- StartTime: 13125
+  Lane: 2
+  KeySounds: []
+- StartTime: 13200
+  Lane: 4
+  KeySounds: []
+- StartTime: 13650
+  Lane: 4
+  KeySounds: []
+- StartTime: 13725
+  Lane: 1
+  KeySounds: []
+- StartTime: 14325
+  Lane: 1
+  KeySounds: []
+- StartTime: 14400
+  Lane: 4
+  KeySounds: []
+- StartTime: 14850
+  Lane: 4
+  KeySounds: []
+- StartTime: 15600
+  Lane: 4
+  KeySounds: []
+- StartTime: 16050
+  Lane: 4
+  KeySounds: []
+- StartTime: 16125
+  Lane: 2
+  KeySounds: []
+- StartTime: 16725
+  Lane: 2
+  KeySounds: []
+- StartTime: 16800
+  Lane: 4
+  KeySounds: []
+- StartTime: 17250
+  Lane: 4
+  KeySounds: []
+- StartTime: 17325
+  Lane: 3
+  KeySounds: []
+- StartTime: 17925
+  Lane: 3
+  KeySounds: []
+- StartTime: 18000
+  Lane: 4
+  KeySounds: []
+- StartTime: 18450
+  Lane: 4
+  KeySounds: []
+- StartTime: 19200
+  Lane: 4
+  KeySounds: []
+- StartTime: 19275
+  Lane: 1
+  KeySounds: []
+- StartTime: 19500
+  Lane: 4
+  KeySounds: []
+- StartTime: 19800
+  Lane: 4
+  KeySounds: []
+- StartTime: 20100
+  Lane: 4
+  KeySounds: []
+- StartTime: 20325
+  Lane: 1
+  KeySounds: []
+- StartTime: 20400
+  Lane: 4
+  KeySounds: []
+- StartTime: 20850
+  Lane: 4
+  KeySounds: []
+- StartTime: 21600
+  Lane: 4
+  KeySounds: []
+- StartTime: 21675
+  Lane: 3
+  KeySounds: []
 - StartTime: 21900
   Lane: 4
   KeySounds: []
-- StartTime: 22350
+- StartTime: 22200
   Lane: 4
   KeySounds: []
-- StartTime: 23100
+- StartTime: 22500
+  Lane: 4
+  KeySounds: []
+- StartTime: 22725
+  Lane: 3
+  KeySounds: []
+- StartTime: 22800
+  Lane: 4
+  KeySounds: []
+- StartTime: 23250
   Lane: 4
   KeySounds: []
 - StartTime: 23700
   Lane: 4
   KeySounds: []
+- StartTime: 24000
+  Lane: 4
+  KeySounds: []
+- StartTime: 24075
+  Lane: 1
+  KeySounds: []
 - StartTime: 24300
   Lane: 4
   KeySounds: []
-- StartTime: 24750
+- StartTime: 24600
   Lane: 4
   KeySounds: []
-- StartTime: 25500
+- StartTime: 24900
   Lane: 4
   KeySounds: []
-- StartTime: 26100
+- StartTime: 25125
+  Lane: 1
+  KeySounds: []
+- StartTime: 25200
   Lane: 4
+  KeySounds: []
+- StartTime: 25650
+  Lane: 4
+  KeySounds: []
+- StartTime: 26400
+  Lane: 4
+  KeySounds: []
+- StartTime: 26475
+  Lane: 3
   KeySounds: []
 - StartTime: 26700
   Lane: 4
   KeySounds: []
-- StartTime: 27150
+- StartTime: 27000
   Lane: 4
   KeySounds: []
-- StartTime: 27900
+- StartTime: 27300
+  Lane: 4
+  KeySounds: []
+- StartTime: 27525
+  Lane: 3
+  KeySounds: []
+- StartTime: 27600
+  Lane: 4
+  KeySounds: []
+- StartTime: 28050
   Lane: 4
   KeySounds: []
 - StartTime: 28500
   Lane: 4
   KeySounds: []
-- StartTime: 28575
+- StartTime: 40800
   Lane: 4
   KeySounds: []
-- StartTime: 28650
+- StartTime: 40875
+  Lane: 7
+  KeySounds: []
+- StartTime: 42000
   Lane: 4
   KeySounds: []
-- StartTime: 28725
+- StartTime: 42300
   Lane: 4
   KeySounds: []
-- StartTime: 29100
+- StartTime: 43200
   Lane: 4
   KeySounds: []
-- StartTime: 29550
+- StartTime: 44325
+  Lane: 7
+  KeySounds: []
+- StartTime: 44400
   Lane: 4
   KeySounds: []
-- StartTime: 30300
+- StartTime: 44700
   Lane: 4
   KeySounds: []
-- StartTime: 30900
+- StartTime: 45600
   Lane: 4
   KeySounds: []
-- StartTime: 31500
+- StartTime: 45675
+  Lane: 3
+  KeySounds: []
+- StartTime: 46800
   Lane: 4
   KeySounds: []
-- StartTime: 31950
+- StartTime: 48000
   Lane: 4
   KeySounds: []
-- StartTime: 32700
+- StartTime: 49125
+  Lane: 3
+  KeySounds: []
+- StartTime: 49200
   Lane: 4
   KeySounds: []
-- StartTime: 33300
-  Lane: 4
+- StartTime: 49275
+  Lane: 2
   KeySounds: []
-- StartTime: 33900
-  Lane: 4
-  KeySounds: []
-- StartTime: 34350
-  Lane: 4
-  KeySounds: []
-- StartTime: 35100
-  Lane: 4
-  KeySounds: []
-- StartTime: 35700
-  Lane: 4
-  KeySounds: []
-- StartTime: 36300
-  Lane: 4
-  KeySounds: []
-- StartTime: 36750
-  Lane: 4
-  KeySounds: []
-- StartTime: 37500
-  Lane: 4
-  KeySounds: []
-- StartTime: 38100
-  Lane: 4
-  KeySounds: []
-- StartTime: 72300
-  Lane: 4
-  KeySounds: []
-- StartTime: 72750
-  Lane: 4
-  KeySounds: []
-- StartTime: 73500
-  Lane: 4
-  KeySounds: []
-- StartTime: 74100
-  Lane: 4
-  KeySounds: []
-- StartTime: 74700
-  Lane: 4
-  KeySounds: []
-- StartTime: 75150
-  Lane: 4
-  KeySounds: []
-- StartTime: 75900
-  Lane: 4
-  KeySounds: []
-- StartTime: 76500
-  Lane: 4
-  KeySounds: []
-- StartTime: 77100
-  Lane: 4
-  KeySounds: []
-- StartTime: 77550
-  Lane: 4
-  KeySounds: []
-- StartTime: 78300
-  Lane: 4
-  KeySounds: []
-- StartTime: 78900
-  Lane: 4
-  KeySounds: []
-- StartTime: 78975
-  Lane: 4
-  KeySounds: []
-- StartTime: 79050
-  Lane: 4
-  KeySounds: []
-- StartTime: 79125
-  Lane: 4
-  KeySounds: []
-- StartTime: 79500
-  Lane: 4
-  KeySounds: []
-- StartTime: 79950
-  Lane: 4
-  KeySounds: []
-- StartTime: 80700
-  Lane: 4
-  KeySounds: []
-- StartTime: 81300
-  Lane: 4
-  KeySounds: []
-- StartTime: 81900
-  Lane: 4
-  KeySounds: []
-- StartTime: 82350
-  Lane: 4
-  KeySounds: []
-- StartTime: 83100
-  Lane: 4
-  KeySounds: []
-- StartTime: 83700
-  Lane: 4
-  KeySounds: []
-- StartTime: 84300
-  Lane: 4
-  KeySounds: []
-- StartTime: 84750
-  Lane: 4
-  KeySounds: []
-- StartTime: 85500
-  Lane: 4
-  KeySounds: []
-- StartTime: 86100
-  Lane: 4
-  KeySounds: []
-- StartTime: 86700
-  Lane: 4
-  KeySounds: []
-- StartTime: 87150
-  Lane: 4
-  KeySounds: []
-- StartTime: 87900
-  Lane: 4
-  KeySounds: []
-- StartTime: 88500
-  Lane: 4
-  KeySounds: []
-- StartTime: 88575
-  Lane: 4
-  KeySounds: []
-- StartTime: 88650
-  Lane: 4
-  KeySounds: []
-- StartTime: 88725
-  Lane: 4
+- StartTime: 50400
+  Lane: 2
   KeySounds: []
 '''
 lane1Data = []

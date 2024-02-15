@@ -33,6 +33,20 @@ rotationSpeed = 200
 state = 0
 shootingSelection = 1
 
+[node name="Enemy2" parent="." instance=ExtResource( 1 )]
+position = Vector2( -366, -192 )
+songPositions = PoolIntArray( 9600, 10050, 10800, 11250, 12000, 12450, 13200, 13650, 14400, 14850, 15600, 16050, 16800, 17250, 18000, 18450, 19200, 19500, 19800, 20100, 20400, 20850, 21600, 21900, 22200, 22500, 22800, 23250, 23700, 24000, 24300, 24600, 24900, 25200, 25650, 26400, 26700, 27000, 27300, 27600, 28050, 28500, 40800, 42000, 42300, 43200, 44400, 44700, 45600, 46800, 48000, 49200 )
+songPositions1 = PoolIntArray( 13725, 14325, 19275, 20325, 24075, 25125 )
+songPositions2 = PoolIntArray( 10125, 10725, 12525, 13125, 16125, 16725, 49275, 50400 )
+songPositions3 = PoolIntArray( 11325, 11925, 17325, 17925, 21675, 22725, 26475, 27525, 45675, 49125 )
+songPositions4 = PoolIntArray(  )
+songPositions5 = PoolIntArray(  )
+songPositions6 = PoolIntArray( 40875, 44325 )
+radius = 30
+rotationSpeed = 200
+spawnPointCount = 6
+shootingSelection = 3
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
 
