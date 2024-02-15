@@ -12,13 +12,13 @@ public class Composer : AudioStreamPlayer
 
     // private int previousSongPos = 0;
 
-    [Export]
-    public int[] songPositions = {18, 360, 703, 1046, 1389, 1732, 2075, 2418, 2760, 3103, 3446, 3789, 4132, 4475, 4818, 5160, 5503, 5846, 6189, 6532, 6875, 7218, 7560, 7903, 8246, 8589, 8932, 9275, 9618, 9960, 10303, 10646, 11332, 12018, 12703, 13389, 14075, 14760, 15446, 16132, 16475, 17160, 17846, 18532, 19218, 19903, 20589, 21275, 21960, 22303, 22989, 23675, 24360, 25046, 25732, 26418, 27103};
+    // [Export]
+    // public int[] songPositions = {18, 360, 703, 1046, 1389, 1732, 2075, 2418, 2760, 3103, 3446, 3789, 4132, 4475, 4818, 5160, 5503, 5846, 6189, 6532, 6875, 7218, 7560, 7903, 8246, 8589, 8932, 9275, 9618, 9960, 10303, 10646, 11332, 12018, 12703, 13389, 14075, 14760, 15446, 16132, 16475, 17160, 17846, 18532, 19218, 19903, 20589, 21275, 21960, 22303, 22989, 23675, 24360, 25046, 25732, 26418, 27103};
 
 
     public int totalAccuracy = 0;
 
-    public int songPosIndex = 0;
+    // public int songPosIndex = 0;
 
     // option 2 strategy
 
@@ -57,33 +57,45 @@ public class Composer : AudioStreamPlayer
         CheckEnemyMovement((int)time);
 
 
-        if (Playing && time >= songPositions[songPosIndex])
-        {
-            ReportBeat();
-            MakeEnemyShoot();
-            // CheckEnemyMovement((int)songPos);
-        }
-    }
+        // if (Playing && time >= songPositions[songPosIndex])
+        // {
+        //     ReportBeat();
+        //     MakeEnemyShoot();
+        //     // CheckEnemyMovement((int)songPos);
+        // }
 
-    public void ReportBeat()
-    {
-        // GD.Print(songPosIndex + ": " + songPos + ", So difference in accuracy is " + (songPos - songPositions[songPosIndex]));
-        // GD.Print("so mean accuracy is " + (totalAccuracy / (songPosIndex+1)));
-        // songPosIndex += 1;
-        // totalAccuracy += totalAccuracy / (songPosIndex+1);
-
-        // GD.Print(songPosIndex + ": " + time + ", So difference in accuracy is " + (time - songPositions[songPosIndex]) + "ms!");
-        songPosIndex += 1;
-        totalAccuracy += totalAccuracy / (songPosIndex+1);
-    }
-
-    public void MakeEnemyShoot()
-    {
         foreach (Enemy enemy in GetTree().GetNodesInGroup("Enemy"))
         {
-            enemy.ShootSpiral();
+            if (enemy.songPositions.Length > enemy.songPosIndex-1) // If the index is too big, you wouldnt want to do the next if statement
+            {
+                if (time >= enemy.songPositions[enemy.songPosIndex])
+                {
+                    enemy.ShootAssigned();
+                    enemy.songPosIndex += 1;
+                } 
+            }
         }
     }
+
+    // public void ReportBeat()
+    // {
+    //     // GD.Print(songPosIndex + ": " + songPos + ", So difference in accuracy is " + (songPos - songPositions[songPosIndex]));
+    //     // GD.Print("so mean accuracy is " + (totalAccuracy / (songPosIndex+1)));
+    //     // songPosIndex += 1;
+    //     // totalAccuracy += totalAccuracy / (songPosIndex+1);
+
+    //     // GD.Print(songPosIndex + ": " + time + ", So difference in accuracy is " + (time - songPositions[songPosIndex]) + "ms!");
+    //     songPosIndex += 1;
+    //     totalAccuracy += totalAccuracy / (songPosIndex+1);
+    // }
+
+    // public void MakeEnemyShoot()
+    // {
+    //     foreach (Enemy enemy in GetTree().GetNodesInGroup("Enemy"))
+    //     {
+    //         enemy.ShootSpiral();
+    //     }
+    // }
 
     public void CheckEnemyMovement(int givenSongPosition)
     {

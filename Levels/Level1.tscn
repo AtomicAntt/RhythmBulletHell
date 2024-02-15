@@ -8,6 +8,7 @@
 [ext_resource path="res://GameObjects/Enemy/EnemyPosition.tscn" type="PackedScene" id=6]
 
 [node name="Level1" type="Node2D"]
+pause_mode = 1
 
 [node name="Music" parent="." instance=ExtResource( 5 )]
 stream = ExtResource( 4 )

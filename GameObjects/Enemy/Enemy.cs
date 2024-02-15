@@ -6,6 +6,12 @@ public class Enemy : Node2D
 {
     public enum States {MIRROR, IDLE}
 
+    public enum ShootingSelection {NORMAL, SHOTGUN, STACK, SPIRAL, CIRCLE, HOMINGCIRCLE}
+
+    [Export]
+    public int[] songPositions; // This is every time the enemy fires
+    public int songPosIndex = 0; // This is the index position that the composer.cs looks for
+
     [Export]
     public int[] songPositions1;
     [Export]
@@ -37,6 +43,9 @@ public class Enemy : Node2D
 
     [Export]
     public States state = States.IDLE;
+
+    [Export]
+    public ShootingSelection shootingSelection = ShootingSelection.NORMAL;
 
     private Player player;
 
@@ -114,6 +123,31 @@ public class Enemy : Node2D
     // ----------
 
     // Call these from composer.cs
+    public void ShootAssigned()
+    {
+        switch (shootingSelection)
+        {
+            case ShootingSelection.NORMAL:
+                Shoot();
+                break;
+            case ShootingSelection.SHOTGUN:
+                ShootShotgun();
+                break;
+            case ShootingSelection.STACK:
+                ShootStack();
+                break;
+            case ShootingSelection.SPIRAL:
+                ShootSpiral();
+                break;
+            case ShootingSelection.CIRCLE:
+                ShootCircle();
+                break;
+            case ShootingSelection.HOMINGCIRCLE:
+                ShootHomingCircle();
+                break;
+        }
+    }
+
     public void Shoot()
     {
         PackedScene scene = GD.Load<PackedScene>("res://GameObjects/Enemy/Projectile.tscn");

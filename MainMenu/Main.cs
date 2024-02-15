@@ -1,8 +1,15 @@
 using Godot;
 using System;
+using System.Data;
 
 public class Main : Control
 {
+    // ---------- Game states to track the player is currently playing the game ----------
+
+    public enum GameStates {ACTIVE, INACTIVE, PAUSED};
+
+    public GameStates gameState = GameStates.INACTIVE;
+
     // ---------- Initialized audio node variables ----------
 
     // SFX
@@ -32,6 +39,7 @@ public class Main : Control
     // ---------- Initialized Game UI references ----------
 
     public Control gameUI;
+    public Control pauseUI;
     public TextureProgress healthBar;
     public TextureProgress damageBar;
     public Label healthLabel;
@@ -70,6 +78,7 @@ public class Main : Control
         _settingsBackground = GetNode<ColorRect>("Settings/SettingsBackground");
 
         gameUI = GetNode<Control>("Levels/CanvasLayer/GameUI");
+        pauseUI = GetNode<Control>("Levels/CanvasLayer/PauseUI");
         healthBar = GetNode<TextureProgress>("Levels/CanvasLayer/GameUI/VBoxContainer/HealthBar");
         damageBar = GetNode<TextureProgress>("Levels/CanvasLayer/GameUI/VBoxContainer/HealthBar/DamageBar");
         healthLabel = GetNode<Label>("Levels/CanvasLayer/GameUI/VBoxContainer/HealthLabel");
@@ -138,10 +147,11 @@ public class Main : Control
 
     public void _on_StartButton_pressed()
     {
-        LoadLevel("Level1");
+        LoadLevel("Level2");
         gameUI.Visible = true;
         mainMenuMusic.Stop();
         clickPlaySound.Play();
+        gameState = GameStates.ACTIVE;
     }
 
     public void _on_QuitButton_pressed()
@@ -208,5 +218,39 @@ public class Main : Control
                 quitSound.Play();
             }
         }
+
+        // Lets leave it up to the actual pause menu to deal with it
+        // if (@event.IsActionPressed("pause"))
+        // {
+        //     TogglePause();
+        // }
     }
+
+    // ---------- PAUSING/UNPAUSING ----------
+
+    // public void TogglePause()
+    // {
+    //     if (gameState == GameStates.ACTIVE)
+    //     {
+    //         pauseUI.Visible = true;
+    //         gameState = GameStates.PAUSED;
+    //         GetTree().Paused = true;
+
+    //         foreach (Composer composerNode in GetTree().GetNodesInGroup("GameMusic"))
+    //         {
+    //             composerNode.StreamPaused = true;
+    //         }
+    //     }
+    //     else if (gameState == GameStates.PAUSED)
+    //     {
+    //         pauseUI.Visible = false;
+    //         gameState = GameStates.ACTIVE;
+    //         GetTree().Paused = false;
+
+    //         foreach (Composer composerNode in GetTree().GetNodesInGroup("GameMusic"))
+    //         {
+    //             composerNode.StreamPaused = false;
+    //         }
+    //     }
+    // }
 }
