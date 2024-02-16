@@ -147,7 +147,7 @@ public class Main : Control
 
     public void _on_StartButton_pressed()
     {
-        LoadLevel("Level2");
+        LoadLevel("Level3");
         gameUI.Visible = true;
         mainMenuMusic.Stop();
         clickPlaySound.Play();

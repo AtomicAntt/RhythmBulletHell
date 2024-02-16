@@ -44,6 +44,41 @@ public class Enemy : Node2D
         }
     }
 
+    [Export]
+    public int[] switchToRingIndex = {-1};
+
+    public void CheckSwitchToRingIndex(int posIndex)
+    {
+        if (switchToRingIndex.Length <= 0)
+        {
+            return;
+        }
+
+        if (switchToRingIndex.Contains(posIndex))
+        {
+            spiraling = false;
+            shootingSelection = ShootingSelection.SPIRAL;
+        }
+    }
+
+    [Export]
+    public int[] switchToHomingCircleIndex = {-1};
+
+    public void CheckSwitchToHomingCircleIndex(int posIndex)
+    {
+        if (switchToHomingCircleIndex.Length <= 0)
+        {
+            return;
+        }
+
+        if (switchToHomingCircleIndex.Contains(posIndex))
+        {
+            spiraling = false;
+            shootingSelection = ShootingSelection.HOMINGCIRCLE;
+        }
+    }
+
+
     public class SongPosition
     {
         public int Index = 0;

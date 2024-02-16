@@ -71,6 +71,8 @@ public class Composer : AudioStreamPlayer
                 if (time >= enemy.songPositions[enemy.songPosIndex])
                 {
                     enemy.CheckSwitchToSpiralIndex(enemy.songPosIndex);
+                    enemy.CheckSwitchToRingIndex(enemy.songPosIndex);
+                    enemy.CheckSwitchToHomingCircleIndex(enemy.songPosIndex);
 
                     enemy.ShootAssigned();
                     enemy.songPosIndex += 1;

@@ -100,4 +100,9 @@ public class Projectile : Area2D
             QueueFree();
         }
     }
+
+    public void _on_Timer_timeout()
+    {
+        QueueFree();
+    }
 }

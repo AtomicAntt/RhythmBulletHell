@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/1._JUNGNBASS_-_Hallowen_chan.mp3-fe5c0b2ab1b378904b2761ed05f10399.mp3str"
+
+[deps]
+
+source_file="res://Music/1._JUNGNBASS_-_Hallowen_chan.mp3"
+dest_files=[ "res://.import/1._JUNGNBASS_-_Hallowen_chan.mp3-fe5c0b2ab1b378904b2761ed05f10399.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
