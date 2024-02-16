@@ -65,7 +65,7 @@ rotationSpeed = 70
 position = Vector2( -29, 0.00012207 )
 rotation = 1.5708
 frames = SubResource( 2 )
-frame = 1
+frame = 7
 playing = true
 
 [node name="Rotater" type="Node2D" parent="."]

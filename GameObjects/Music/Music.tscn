@@ -4,6 +4,7 @@
 
 [node name="Music" type="AudioStreamPlayer" groups=["GameMusic"]]
 pause_mode = 1
+bus = "BGM"
 script = ExtResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]

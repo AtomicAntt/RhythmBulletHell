@@ -118,7 +118,7 @@ margin_bottom = 26.0
 margin_top = 35.0
 margin_right = 250.0
 margin_bottom = 48.0
-text = "Master: 100%"
+text = "Master Volume: 100%"
 align = 1
 
 [node name="MasterSlider" type="HSlider" parent="Settings/SettingsPanel/SettingsContainer" groups=["Master", "VolumeSlider"]]
@@ -134,7 +134,7 @@ value = 0.5
 margin_top = 82.0
 margin_right = 250.0
 margin_bottom = 95.0
-text = "Background Music: 100%"
+text = "Music Volume: 100%"
 align = 1
 
 [node name="MusicSlider" type="HSlider" parent="Settings/SettingsPanel/SettingsContainer" groups=["BGM", "VolumeSlider"]]
@@ -149,7 +149,7 @@ value = 0.5
 margin_top = 129.0
 margin_right = 250.0
 margin_bottom = 142.0
-text = "Sound Effects: 100%"
+text = "Effects Volume: 100%"
 align = 1
 
 [node name="EffectsSlider" type="HSlider" parent="Settings/SettingsPanel/SettingsContainer" groups=["SFX", "VolumeSlider"]]
@@ -271,7 +271,7 @@ color = Color( 0, 0, 0, 0.427451 )
 [connection signal="pressed" from="MainMenu/MenuButtons/QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="mouse_entered" from="Settings/SettingsPanel/SettingsBackButton" to="." method="_on_Button_mouse_entered"]
 [connection signal="pressed" from="Settings/SettingsPanel/SettingsBackButton" to="." method="_on_SettingsBackButton_pressed"]
-[connection signal="value_changed" from="Settings/SettingsPanel/SettingsContainer/MasterSlider" to="." method="_on_VolumeSlider_value_changed" binds= [ "Master", "Master" ]]
-[connection signal="value_changed" from="Settings/SettingsPanel/SettingsContainer/MusicSlider" to="." method="_on_VolumeSlider_value_changed" binds= [ "BGM", "Background Music" ]]
-[connection signal="value_changed" from="Settings/SettingsPanel/SettingsContainer/EffectsSlider" to="." method="_on_VolumeSlider_value_changed" binds= [ "SFX", "Sound Effects" ]]
+[connection signal="value_changed" from="Settings/SettingsPanel/SettingsContainer/MasterSlider" to="." method="_on_VolumeSlider_value_changed" binds= [ "Master", "Master Volume" ]]
+[connection signal="value_changed" from="Settings/SettingsPanel/SettingsContainer/MusicSlider" to="." method="_on_VolumeSlider_value_changed" binds= [ "BGM", "Music Volume" ]]
+[connection signal="value_changed" from="Settings/SettingsPanel/SettingsContainer/EffectsSlider" to="." method="_on_VolumeSlider_value_changed" binds= [ "SFX", "Effects Volume" ]]
 [connection signal="toggled" from="Settings/SettingsPanel/SettingsContainer/FullscreenSelectorContainer/FullscreenButton" to="." method="_on_FullscreenButton_toggled"]

@@ -27,6 +27,23 @@ public class Enemy : Node2D
 
     public SongPosition indexSongPos1 = new SongPosition(), indexSongPos2 = new SongPosition(), indexSongPos3 = new SongPosition(), indexSongPos4 = new SongPosition(), indexSongPos5 = new SongPosition(), indexSongPos6 = new SongPosition();
 
+    [Export]
+    public int[] switchToSpiralIndex = {-1};
+
+    public void CheckSwitchToSpiralIndex(int posIndex)
+    {
+        if (switchToSpiralIndex.Length <= 0)
+        {
+            return;
+        }
+
+        if (switchToSpiralIndex.Contains(posIndex))
+        {
+            spiraling = true;
+            shootingSelection = ShootingSelection.SPIRAL;
+        }
+    }
+
     public class SongPosition
     {
         public int Index = 0;
@@ -170,7 +187,12 @@ public class Enemy : Node2D
             // projectile.direction = forwardDirection.Rotated(radians);
             projectile.Rotation = forwardDirection.Rotated(radians).Angle();
             projectile.GlobalPosition = GlobalPosition;
+
             GetParent().AddChild(projectile);
+
+            projectile.SetNonDirectional();
+
+            
         }
     }
 
@@ -201,7 +223,11 @@ public class Enemy : Node2D
             Projectile projectile = scene.Instance<Projectile>();
             projectile.Position = node.GlobalPosition;
             projectile.Rotation = node.GlobalRotation;
+
             GetParent().AddChild(projectile);
+
+            projectile.SetDirectional();
+            
         }
     }
 

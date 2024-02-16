@@ -19,6 +19,7 @@ public class Projectile : Area2D
 
     // ---------
 
+    public AnimatedSprite animatedSprite;
     
 
 
@@ -29,6 +30,8 @@ public class Projectile : Area2D
 
     public override void _Ready()
     {
+        animatedSprite = GetNode<AnimatedSprite>("AnimatedSprite");
+
         speed = maxSpeed;
 
         player = GetTree().GetNodesInGroup("Player")[0] as Player;
@@ -39,6 +42,15 @@ public class Projectile : Area2D
         }
     }
     
+    public void SetDirectional()
+    {
+        animatedSprite.Play("Directional");
+    }
+
+    public void SetNonDirectional()
+    {
+        animatedSprite.Play("Nondirectional");
+    }
 
     // Homing
 

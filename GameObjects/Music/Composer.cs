@@ -70,6 +70,8 @@ public class Composer : AudioStreamPlayer
             {
                 if (time >= enemy.songPositions[enemy.songPosIndex])
                 {
+                    enemy.CheckSwitchToSpiralIndex(enemy.songPosIndex);
+
                     enemy.ShootAssigned();
                     enemy.songPosIndex += 1;
                 } 
@@ -94,6 +96,23 @@ public class Composer : AudioStreamPlayer
     //     foreach (Enemy enemy in GetTree().GetNodesInGroup("Enemy"))
     //     {
     //         enemy.ShootSpiral();
+    //     }
+    // }
+
+    // public void CheckStateSwitches(Enemy enemy)
+    // {
+    //     if (!IsInstanceValid(enemy)) // why do i have to add this?
+    //     {
+    //         return;
+    //     }
+    //     // Check spirals
+    //     foreach (int index in enemy.switchToSpiralIndex)
+    //     {
+    //         if (index == enemy.songPosIndex)
+    //         {
+    //             enemy.spiraling = true;
+    //             enemy.shootingSelection = Enemy.ShootingSelection.SPIRAL;
+    //         }
     //     }
     // }
 

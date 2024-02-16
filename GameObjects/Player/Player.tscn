@@ -236,6 +236,7 @@ animations = [ {
 extents = Vector2( 2, 2.5 )
 
 [node name="Player" type="KinematicBody2D" groups=["Player"]]
+scale = Vector2( 2, 2 )
 script = ExtResource( 1 )
 speed = 210
 
