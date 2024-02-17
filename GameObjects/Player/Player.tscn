@@ -147,7 +147,7 @@ animations = [ {
 "speed": 12.0
 }, {
 "frames": [ SubResource( 86 ), SubResource( 87 ), SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ) ],
-"loop": false,
+"loop": true,
 "name": "Flight",
 "speed": 16.0
 }, {
@@ -247,7 +247,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
 animation = "Flight"
-frame = 6
+frame = 4
 playing = true
 
 [node name="Hitbox" type="Area2D" parent="." groups=["PlayerHitbox"]]
