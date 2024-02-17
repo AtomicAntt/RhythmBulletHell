@@ -78,6 +78,23 @@ public class Enemy : Node2D
         }
     }
 
+    [Export]
+    public int[] switchToShotgunIndex = {-1};
+
+    public void CheckSwitchToShotgun(int posIndex)
+    {
+        if (switchToShotgunIndex.Length <= 0)
+        {
+            return;
+        }
+
+        if (switchToShotgunIndex.Contains(posIndex))
+        {
+            spiraling = false;
+            shootingSelection = ShootingSelection.SHOTGUN;
+        }
+    }
+
 
     public class SongPosition
     {

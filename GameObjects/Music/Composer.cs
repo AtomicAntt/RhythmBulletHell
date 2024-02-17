@@ -73,6 +73,7 @@ public class Composer : AudioStreamPlayer
                     enemy.CheckSwitchToSpiralIndex(enemy.songPosIndex);
                     enemy.CheckSwitchToRingIndex(enemy.songPosIndex);
                     enemy.CheckSwitchToHomingCircleIndex(enemy.songPosIndex);
+                    enemy.CheckSwitchToShotgun(enemy.songPosIndex);
 
                     enemy.ShootAssigned();
                     enemy.songPosIndex += 1;

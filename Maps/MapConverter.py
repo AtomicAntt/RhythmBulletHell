@@ -1,401 +1,44 @@
 import json
 
 data = '''
-- StartTime: 9617
-  Lane: 3
-  KeySounds: []
-- StartTime: 9917
-  Lane: 4
-  KeySounds: []
-- StartTime: 10217
-  Lane: 4
-  KeySounds: []
-- StartTime: 10517
-  Lane: 4
-  KeySounds: []
-- StartTime: 10817
-  Lane: 3
-  KeySounds: []
-- StartTime: 11117
-  Lane: 4
-  KeySounds: []
-- StartTime: 11117
-  Lane: 1
-  KeySounds: []
-- StartTime: 11267
-  Lane: 4
-  KeySounds: []
-- StartTime: 11417
-  Lane: 4
-  KeySounds: []
-- StartTime: 11717
-  Lane: 4
-  KeySounds: []
-- StartTime: 11717
-  Lane: 1
-  KeySounds: []
-- StartTime: 12017
-  Lane: 3
-  KeySounds: []
-- StartTime: 12317
-  Lane: 4
-  KeySounds: []
-- StartTime: 12617
-  Lane: 4
-  KeySounds: []
-- StartTime: 12917
-  Lane: 4
-  KeySounds: []
-- StartTime: 13217
-  Lane: 3
-  KeySounds: []
-- StartTime: 13517
-  Lane: 4
-  KeySounds: []
-- StartTime: 13517
-  Lane: 1
-  KeySounds: []
-- StartTime: 13667
-  Lane: 4
-  KeySounds: []
-- StartTime: 13817
-  Lane: 4
-  KeySounds: []
-- StartTime: 14117
-  Lane: 4
-  KeySounds: []
-- StartTime: 14117
-  Lane: 1
-  KeySounds: []
-- StartTime: 14417
-  Lane: 3
-  KeySounds: []
-- StartTime: 14717
-  Lane: 4
-  KeySounds: []
-- StartTime: 15017
-  Lane: 4
-  KeySounds: []
-- StartTime: 15317
-  Lane: 4
-  KeySounds: []
-- StartTime: 15617
-  Lane: 3
-  KeySounds: []
-- StartTime: 15917
-  Lane: 4
-  KeySounds: []
-- StartTime: 15917
-  Lane: 1
-  KeySounds: []
-- StartTime: 16067
-  Lane: 4
-  KeySounds: []
-- StartTime: 16217
-  Lane: 4
-  KeySounds: []
-- StartTime: 16517
-  Lane: 4
-  KeySounds: []
-- StartTime: 16517
-  Lane: 1
-  KeySounds: []
-- StartTime: 16817
-  Lane: 3
-  KeySounds: []
-- StartTime: 17117
-  Lane: 4
-  KeySounds: []
-- StartTime: 17417
-  Lane: 4
-  KeySounds: []
-- StartTime: 17717
-  Lane: 4
-  KeySounds: []
-- StartTime: 18017
-  Lane: 3
-  KeySounds: []
 - StartTime: 20417
-  Lane: 1
-  KeySounds: []
-- StartTime: 20717
-  Lane: 4
-  KeySounds: []
-- StartTime: 21017
-  Lane: 4
-  KeySounds: []
-- StartTime: 21317
-  Lane: 4
-  KeySounds: []
-- StartTime: 21617
-  Lane: 1
-  KeySounds: []
-- StartTime: 21917
-  Lane: 4
-  KeySounds: []
-- StartTime: 21917
-  Lane: 3
-  KeySounds: []
-- StartTime: 22067
-  Lane: 4
-  KeySounds: []
-- StartTime: 22217
-  Lane: 4
-  KeySounds: []
-- StartTime: 22517
-  Lane: 4
-  KeySounds: []
-- StartTime: 22517
-  Lane: 3
-  KeySounds: []
-- StartTime: 22817
-  Lane: 1
-  KeySounds: []
-- StartTime: 23117
-  Lane: 4
-  KeySounds: []
-- StartTime: 23417
-  Lane: 4
-  KeySounds: []
-- StartTime: 23717
-  Lane: 4
-  KeySounds: []
-- StartTime: 24017
-  Lane: 1
-  KeySounds: []
-- StartTime: 24317
-  Lane: 4
-  KeySounds: []
-- StartTime: 24317
-  Lane: 3
-  KeySounds: []
-- StartTime: 24467
-  Lane: 4
-  KeySounds: []
-- StartTime: 24617
   Lane: 4
   KeySounds: []
 - StartTime: 24917
   Lane: 4
   KeySounds: []
-- StartTime: 24917
-  Lane: 3
+- StartTime: 24992
+  Lane: 4
+  KeySounds: []
+- StartTime: 25067
+  Lane: 4
   KeySounds: []
 - StartTime: 25217
-  Lane: 1
-  KeySounds: []
-- StartTime: 25517
-  Lane: 4
-  KeySounds: []
-- StartTime: 25817
-  Lane: 4
-  KeySounds: []
-- StartTime: 26117
-  Lane: 4
-  KeySounds: []
-- StartTime: 26417
-  Lane: 1
-  KeySounds: []
-- StartTime: 26717
-  Lane: 4
-  KeySounds: []
-- StartTime: 26717
-  Lane: 3
-  KeySounds: []
-- StartTime: 26867
-  Lane: 4
-  KeySounds: []
-- StartTime: 27017
-  Lane: 4
-  KeySounds: []
-- StartTime: 27317
-  Lane: 4
-  KeySounds: []
-- StartTime: 27317
-  Lane: 3
-  KeySounds: []
-- StartTime: 27392
-  Lane: 7
-  KeySounds: []
-- StartTime: 27617
-  Lane: 4
-  KeySounds: []
-- StartTime: 27917
-  Lane: 4
-  KeySounds: []
-- StartTime: 28217
-  Lane: 4
-  KeySounds: []
-- StartTime: 28517
-  Lane: 4
-  KeySounds: []
-- StartTime: 28817
-  Lane: 4
-  KeySounds: []
-- StartTime: 29117
-  Lane: 4
-  KeySounds: []
-- StartTime: 29417
-  Lane: 4
-  KeySounds: []
-- StartTime: 29717
-  Lane: 4
-  KeySounds: []
-- StartTime: 29942
-  Lane: 7
-  KeySounds: []
-- StartTime: 30017
   Lane: 4
   KeySounds: []
 - StartTime: 30017
-  Lane: 5
-  KeySounds: []
-- StartTime: 30317
-  Lane: 4
-  KeySounds: []
-- StartTime: 30617
-  Lane: 4
-  KeySounds: []
-- StartTime: 30917
-  Lane: 4
-  KeySounds: []
-- StartTime: 31217
-  Lane: 4
-  KeySounds: []
-- StartTime: 31217
-  Lane: 5
-  KeySounds: []
-- StartTime: 31517
-  Lane: 4
-  KeySounds: []
-- StartTime: 31517
-  Lane: 7
-  KeySounds: []
-- StartTime: 31667
-  Lane: 4
-  KeySounds: []
-- StartTime: 31817
-  Lane: 4
-  KeySounds: []
-- StartTime: 32117
-  Lane: 4
-  KeySounds: []
-- StartTime: 32117
-  Lane: 7
-  KeySounds: []
-- StartTime: 32417
-  Lane: 4
-  KeySounds: []
-- StartTime: 32417
-  Lane: 5
-  KeySounds: []
-- StartTime: 32717
-  Lane: 4
-  KeySounds: []
-- StartTime: 33017
-  Lane: 4
-  KeySounds: []
-- StartTime: 33317
-  Lane: 4
-  KeySounds: []
-- StartTime: 33617
-  Lane: 4
-  KeySounds: []
-- StartTime: 33617
-  Lane: 5
-  KeySounds: []
-- StartTime: 33917
-  Lane: 4
-  KeySounds: []
-- StartTime: 33917
-  Lane: 7
-  KeySounds: []
-- StartTime: 34067
-  Lane: 4
-  KeySounds: []
-- StartTime: 34217
   Lane: 4
   KeySounds: []
 - StartTime: 34517
   Lane: 4
   KeySounds: []
-- StartTime: 34517
-  Lane: 7
-  KeySounds: []
-- StartTime: 34817
+- StartTime: 34667
   Lane: 4
   KeySounds: []
 - StartTime: 34817
-  Lane: 5
-  KeySounds: []
-- StartTime: 35117
-  Lane: 4
-  KeySounds: []
-- StartTime: 35417
-  Lane: 4
-  KeySounds: []
-- StartTime: 35717
-  Lane: 4
-  KeySounds: []
-- StartTime: 36017
-  Lane: 4
-  KeySounds: []
-- StartTime: 36017
-  Lane: 5
-  KeySounds: []
-- StartTime: 36317
-  Lane: 4
-  KeySounds: []
-- StartTime: 36317
-  Lane: 7
-  KeySounds: []
-- StartTime: 36467
-  Lane: 4
-  KeySounds: []
-- StartTime: 36617
-  Lane: 4
-  KeySounds: []
-- StartTime: 36917
-  Lane: 4
-  KeySounds: []
-- StartTime: 36917
-  Lane: 7
-  KeySounds: []
-- StartTime: 37217
-  Lane: 4
-  KeySounds: []
-- StartTime: 37217
-  Lane: 3
-  KeySounds: []
-- StartTime: 37517
-  Lane: 4
-  KeySounds: []
-- StartTime: 37817
-  Lane: 4
-  KeySounds: []
-- StartTime: 38117
   Lane: 4
   KeySounds: []
 - StartTime: 38417
   Lane: 4
   KeySounds: []
-- StartTime: 38717
-  Lane: 4
-  KeySounds: []
 - StartTime: 39017
   Lane: 4
   KeySounds: []
-- StartTime: 39317
+- StartTime: 39467
   Lane: 4
   KeySounds: []
 - StartTime: 39617
   Lane: 4
-  KeySounds: []
-- StartTime: 39617
-  Lane: 3
-  KeySounds: []
-- StartTime: 39692
-  Lane: 1
   KeySounds: []
 - StartTime: 39917
   Lane: 4
@@ -410,6 +53,9 @@ data = '''
   Lane: 4
   KeySounds: []
 - StartTime: 40667
+  Lane: 4
+  KeySounds: []
+- StartTime: 40742
   Lane: 4
   KeySounds: []
 - StartTime: 40817
@@ -427,16 +73,19 @@ data = '''
 - StartTime: 41717
   Lane: 4
   KeySounds: []
-- StartTime: 41942
-  Lane: 1
-  KeySounds: []
 - StartTime: 42017
   Lane: 4
   KeySounds: []
-- StartTime: 42017
-  Lane: 3
-  KeySounds: []
 - StartTime: 42317
+  Lane: 4
+  KeySounds: []
+- StartTime: 42392
+  Lane: 4
+  KeySounds: []
+- StartTime: 42467
+  Lane: 4
+  KeySounds: []
+- StartTime: 42542
   Lane: 4
   KeySounds: []
 - StartTime: 42617
@@ -475,12 +124,6 @@ data = '''
 - StartTime: 44417
   Lane: 4
   KeySounds: []
-- StartTime: 44417
-  Lane: 3
-  KeySounds: []
-- StartTime: 44492
-  Lane: 1
-  KeySounds: []
 - StartTime: 44717
   Lane: 4
   KeySounds: []
@@ -494,6 +137,9 @@ data = '''
   Lane: 4
   KeySounds: []
 - StartTime: 45467
+  Lane: 4
+  KeySounds: []
+- StartTime: 45542
   Lane: 4
   KeySounds: []
 - StartTime: 45617
@@ -514,13 +160,16 @@ data = '''
 - StartTime: 46817
   Lane: 4
   KeySounds: []
-- StartTime: 46817
-  Lane: 1
-  KeySounds: []
-- StartTime: 46892
-  Lane: 3
-  KeySounds: []
 - StartTime: 47117
+  Lane: 4
+  KeySounds: []
+- StartTime: 47192
+  Lane: 4
+  KeySounds: []
+- StartTime: 47267
+  Lane: 4
+  KeySounds: []
+- StartTime: 47342
   Lane: 4
   KeySounds: []
 - StartTime: 47417
@@ -557,8 +206,9 @@ data = '''
   Lane: 4
   KeySounds: []
 - StartTime: 49217
-  Lane: 3
+  Lane: 4
   KeySounds: []
+
 '''
 lane1Data = []
 lane2Data = []
@@ -586,5 +236,5 @@ for j in range(7):
     if (i == len(lines)-1):
       print("Array " + str(j+1) + ": " + str(result_array))
       if (j == (4-1)):
-        print("location of note:"+  str(result_array.index(46217)))
+        print("location of note:"+  str(result_array.index(47717)))
       result_array.clear()
