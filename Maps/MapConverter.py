@@ -268,27 +268,6 @@ data = '''
 - StartTime: 27617
   Lane: 4
   KeySounds: []
-- StartTime: 27917
-  Lane: 4
-  KeySounds: []
-- StartTime: 28217
-  Lane: 4
-  KeySounds: []
-- StartTime: 28517
-  Lane: 4
-  KeySounds: []
-- StartTime: 28817
-  Lane: 4
-  KeySounds: []
-- StartTime: 29117
-  Lane: 4
-  KeySounds: []
-- StartTime: 29417
-  Lane: 4
-  KeySounds: []
-- StartTime: 29717
-  Lane: 4
-  KeySounds: []
 - StartTime: 29942
   Lane: 2
   KeySounds: []
@@ -429,24 +408,6 @@ data = '''
   KeySounds: []
 - StartTime: 37217
   Lane: 6
-  KeySounds: []
-- StartTime: 37517
-  Lane: 4
-  KeySounds: []
-- StartTime: 37817
-  Lane: 4
-  KeySounds: []
-- StartTime: 38117
-  Lane: 4
-  KeySounds: []
-- StartTime: 38417
-  Lane: 4
-  KeySounds: []
-- StartTime: 38717
-  Lane: 4
-  KeySounds: []
-- StartTime: 39017
-  Lane: 4
   KeySounds: []
 - StartTime: 39317
   Lane: 4
@@ -689,13 +650,13 @@ data = '''
   Lane: 7
   KeySounds: []
 - StartTime: 66092
-  Lane: 6
-  KeySounds: []
-- StartTime: 66617
-  Lane: 6
+  Lane: 5
   KeySounds: []
 - StartTime: 67217
   Lane: 4
+  KeySounds: []
+- StartTime: 67217
+  Lane: 5
   KeySounds: []
 - StartTime: 68417
   Lane: 4
@@ -727,6 +688,6 @@ for j in range(7):
       # Print the resulting array
     if (i == len(lines)-1):
       print("Array " + str(j+1) + ": " + str(result_array))
-      # if (j == (4-1)):
-      #   print("location of note:"+  str(result_array.index(47717)))
+      if (j == (4-1)):
+        print("location of note:"+  str(result_array.index(20417)))
       result_array.clear()
