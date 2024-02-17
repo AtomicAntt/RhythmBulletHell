@@ -247,7 +247,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
 animation = "Flight"
-frame = 4
+frame = 2
 playing = true
 
 [node name="Hitbox" type="Area2D" parent="." groups=["PlayerHitbox"]]
