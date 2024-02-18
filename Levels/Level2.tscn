@@ -19,6 +19,7 @@ pause_mode = 1
 [node name="Music" parent="." instance=ExtResource( 5 )]
 stream = ExtResource( 4 )
 bpm = 200.0
+endSongTime = 88725
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true

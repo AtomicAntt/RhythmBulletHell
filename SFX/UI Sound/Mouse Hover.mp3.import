@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Mouse Hover.mp3-1992b55078ccd2b6b42281a20d8e0c60.mp3str"
+
+[deps]
+
+source_file="res://SFX/UI Sound/Mouse Hover.mp3"
+dest_files=[ "res://.import/Mouse Hover.mp3-1992b55078ccd2b6b42281a20d8e0c60.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,109 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://GameObjects/Enemy/Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://GameObjects/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI Assets/3.png" type="Texture" id=3]
+[ext_resource path="res://Music/Big_Boss.mp3" type="AudioStream" id=4]
+[ext_resource path="res://GameObjects/Music/Music.tscn" type="PackedScene" id=5]
+[ext_resource path="res://GameObjects/Enemy/EnemyPosition.tscn" type="PackedScene" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 680.5, 5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 12.5, 258 )
+
+[node name="EasyBigBoss" type="Node2D"]
+pause_mode = 1
+
+[node name="Music" parent="." instance=ExtResource( 5 )]
+stream = ExtResource( 4 )
+bpm = 200.0
+endSongTime = 88725
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+
+[node name="Enemy" parent="." instance=ExtResource( 1 )]
+position = Vector2( -25, -202 )
+songPositions = PoolIntArray( 21900, 22350, 23100, 23700, 24300, 24750, 25500, 26100, 26700, 27150, 27900, 28500, 28575, 28650, 28725, 29100, 29550, 30300, 30900, 31500, 31950, 32700, 33300, 33900, 34350, 35100, 35700, 36300, 36750, 37500, 38100, 72300, 72750, 73500, 74100, 74700, 75150, 75900, 76500, 77100, 77550, 78300, 78900, 78975, 79050, 79125, 79500, 79950, 80700, 81300, 81900, 82350, 83100, 83700, 84300, 84750, 85500, 86100, 86700, 87150, 87900, 88500, 88575, 88650, 88725 )
+songPositions1 = PoolIntArray(  )
+songPositions2 = PoolIntArray(  )
+songPositions3 = PoolIntArray(  )
+songPositions4 = PoolIntArray(  )
+songPositions5 = PoolIntArray(  )
+songPositions6 = PoolIntArray(  )
+radius = 30
+rotationSpeed = 200
+state = 0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+stretch_mode = 2
+
+[node name="Positions" type="Node2D" parent="."]
+
+[node name="EnemyPosition" parent="Positions" groups=["1"] instance=ExtResource( 6 )]
+position = Vector2( -366, -192 )
+positionNumber = 1
+
+[node name="EnemyPosition2" parent="Positions" groups=["2"] instance=ExtResource( 6 )]
+position = Vector2( -366, 20 )
+positionNumber = 2
+
+[node name="EnemyPosition3" parent="Positions" groups=["3"] instance=ExtResource( 6 )]
+position = Vector2( -366, 242 )
+positionNumber = 3
+
+[node name="EnemyPosition4" parent="Positions" groups=["4"] instance=ExtResource( 6 )]
+position = Vector2( 364, -202 )
+positionNumber = 4
+
+[node name="EnemyPosition5" parent="Positions" groups=["5"] instance=ExtResource( 6 )]
+position = Vector2( 364, 10 )
+positionNumber = 5
+
+[node name="EnemyPosition6" parent="Positions" groups=["6"] instance=ExtResource( 6 )]
+position = Vector2( 364, 232 )
+positionNumber = 6
+
+[node name="Boundary" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary"]
+position = Vector2( -8.5, -192 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Boundary"]
+position = Vector2( 6, 269 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundary"]
+position = Vector2( -480.5, 61 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Boundary"]
+position = Vector2( 480, 61 )
+shape = SubResource( 2 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 364, -202 )
+songPositions = PoolIntArray( 0, 2400, 4800, 7200, 9900, 10350, 11100, 11550, 12300, 12750, 13500, 13950, 14700, 15150, 15900, 16350, 17100, 17550, 18300, 18450, 18600, 18750, 19200, 19500, 19800, 21150, 21600, 21900, 22200, 24000, 24300, 24600, 25950, 26100, 26400, 26700, 27000, 28800, 29100, 29400, 30000, 30450, 30900, 31200, 31500, 31800, 32400, 33000, 33600, 34050, 34500, 36000, 36450, 36900, 41400, 42300, 43800, 44700, 46200, 47100, 48600, 49500, 50700, 51150, 51900, 52350, 53100, 53550, 54300, 54750, 55500, 55950, 56700, 57150, 57900, 58350, 59100, 59250, 59550, 60300, 60750, 61500, 61950, 62700, 63150, 63900, 64350, 65100, 65550, 66300, 66750, 67500, 67950, 68700, 68850, 69150, 69600, 69900, 70200, 71400, 72000, 72300, 72600, 73050, 73200, 74400, 74700, 75000, 76200, 76800, 77100, 77400 )
+songPositions1 = PoolIntArray(  )
+songPositions2 = PoolIntArray(  )
+songPositions3 = PoolIntArray(  )
+songPositions4 = PoolIntArray( 4800, 7200, 13500, 13950, 18300, 18750, 21600, 23925, 26475, 28800, 31275, 33600, 36075, 38400, 42300, 43800, 47100, 48600, 51900, 52350, 56700, 57150, 61500, 61950, 66300, 66750, 72000, 74325, 76875, 79200 )
+songPositions5 = PoolIntArray( 9900, 10350, 12300, 12750, 14700, 15150, 17100, 17550, 50775, 51150, 53100, 53550, 55500, 55950, 57900, 58350, 60300, 60750, 62700, 63150, 65100, 65550, 67500, 67950 )
+songPositions6 = PoolIntArray( 0, 2400, 11100, 11550, 15900, 16350, 19200, 19800, 24000, 26400, 28875, 31200, 33675, 36000, 40800, 41400, 44700, 46200, 49500, 50700, 54300, 54750, 59100, 59550, 63900, 64350, 68700, 69150, 74400, 76800 )
+spiraling = true
+radius = 30
+rotationSpeed = 200
+spawnPointCount = 5
+shootingSelection = 3

@@ -43,6 +43,7 @@ public class Player : KinematicBody2D
     {
         if (state == States.NORMAL) // Other states like dash and hurt are immunity states
         {
+            GetNode<AudioStreamPlayer>("Hurt").Play();
             state = States.HURT;
             health -= damageTaken;
 

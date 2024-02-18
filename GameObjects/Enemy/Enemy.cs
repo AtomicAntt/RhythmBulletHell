@@ -6,7 +6,7 @@ public class Enemy : Node2D
 {
     public enum States {MIRROR, IDLE}
 
-    public enum ShootingSelection {NORMAL, SHOTGUN, STACK, SPIRAL, CIRCLE, HOMINGCIRCLE}
+    public enum ShootingSelection {NORMAL, SHOTGUN, STACK, SPIRAL, CIRCLE, HOMINGCIRCLE, WEAKSHOTGUN}
 
     [Export]
     public int[] songPositions; // This is every time the enemy fires
@@ -94,6 +94,24 @@ public class Enemy : Node2D
             shootingSelection = ShootingSelection.SHOTGUN;
         }
     }
+
+    [Export]
+    public int[] switchToWeakShotgunIndex = {-1};
+
+    public void CheckSwitchToWeakShotgun(int posIndex)
+    {
+        if (switchToWeakShotgunIndex.Length <= 0)
+        {
+            return;
+        }
+
+        if (switchToWeakShotgunIndex.Contains(posIndex))
+        {
+            spiraling = false;
+            shootingSelection = ShootingSelection.WEAKSHOTGUN;
+        }
+    }
+
 
 
     public class SongPosition
@@ -202,6 +220,9 @@ public class Enemy : Node2D
             case ShootingSelection.SHOTGUN:
                 ShootShotgun();
                 break;
+            case ShootingSelection.WEAKSHOTGUN:
+                ShootWeakShotgun();
+                break;
             case ShootingSelection.STACK:
                 ShootStack();
                 break;
@@ -230,6 +251,27 @@ public class Enemy : Node2D
     public void ShootShotgun()
     {
         float[] angles = {-45, -22.5f, 0, 22.5f, 45};
+
+        foreach(float angle in angles)
+        {
+            float radians = Mathf.Deg2Rad(angle);
+            PackedScene scene = GD.Load<PackedScene>("res://GameObjects/Enemy/Projectile.tscn");
+            Projectile projectile = scene.Instance<Projectile>();
+            // projectile.direction = forwardDirection.Rotated(radians);
+            projectile.Rotation = forwardDirection.Rotated(radians).Angle();
+            projectile.GlobalPosition = GlobalPosition;
+
+            GetParent().AddChild(projectile);
+
+            projectile.SetNonDirectional();
+
+            
+        }
+    }
+
+    public void ShootWeakShotgun()
+    {
+        float[] angles = {-45, 0, 45};
 
         foreach(float angle in angles)
         {

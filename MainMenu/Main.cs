@@ -42,6 +42,7 @@ public class Main : Control
 
     public Control gameUI;
     public Control gameOverUI;
+    public Control gameCompletedUI;
     public Control songSelectUI;
     public TextureProgress healthBar;
     public TextureProgress damageBar;
@@ -84,6 +85,7 @@ public class Main : Control
 
         gameUI = GetNode<Control>("Levels/CanvasLayer/GameUI");
         gameOverUI = GetNode<Control>("Levels/CanvasLayer/GameOverUI");
+        gameCompletedUI = GetNode<Control>("Levels/CanvasLayer/VictoryUI");
         healthBar = GetNode<TextureProgress>("Levels/CanvasLayer/GameUI/VBoxContainer/HealthBar");
         damageBar = GetNode<TextureProgress>("Levels/CanvasLayer/GameUI/VBoxContainer/HealthBar/DamageBar");
         healthLabel = GetNode<Label>("Levels/CanvasLayer/GameUI/VBoxContainer/HealthLabel");
@@ -94,12 +96,19 @@ public class Main : Control
 
         _signals.Connect("UpdateHealth", this, "SetHealth");
         _signals.Connect("GameOver", this, "SetGameOver");
+        _signals.Connect("GameCompleted", this, "SetGameCompleted");
 
         // Load values like settings that were set.
         _saves.LoadGame();
 
         // Play music after loading to allow it to play at the volume setting the user saved.
         mainMenuMusic.Play();
+
+        // CheckButton fullScreenButton = GetTree().GetNodesInGroup("Fullscreen")[0] as CheckButton; Forget it, no full screen button its gonna be on if you like it or not!
+        // if (fullScreenButton.Pressed)
+        // {
+        //     OS.WindowFullscreen = true;
+        // }
     }
 
     // ---------- GAME HANDLING ----------
@@ -111,12 +120,20 @@ public class Main : Control
         {
             music.Stop();
         }
+        GetNode<AudioStreamPlayer>("SFX/Lose").Play();
+    }
+
+    public void SetGameCompleted()
+    {
+        gameCompletedUI.Visible = true;
+        GetNode<AudioStreamPlayer>("SFX/Win").Play();
     }
 
     public void _on_RestartButton_pressed()
     {
         LoadLevel(currentLevel);
         gameOverUI.Visible = false;
+        gameCompletedUI.Visible = false;
         SetHealth(100);
     }
 
@@ -128,6 +145,8 @@ public class Main : Control
     public void _on_BackToMainMenu_pressed()
     {
         songSelectUI.Visible = false;
+
+        clickPlaySound.Play();
 
         _mainMenu.Visible = true;
     }
@@ -153,6 +172,8 @@ public class Main : Control
         SetHealth(100);
 
         songSelectUI.Visible = true;
+    
+        gameCompletedUI.Visible = false;
         gameOverUI.Visible = false;
 
         gameUI.Visible = false;
@@ -216,6 +237,8 @@ public class Main : Control
         // mainMenuMusic.Stop();
         // clickPlaySound.Play();
         // gameState = GameStates.ACTIVE;
+
+        clickPlaySound.Play();
 
         _mainMenu.Visible = false;
         _settings.Visible = false;
@@ -285,6 +308,14 @@ public class Main : Control
                 _settings.Visible = false;
 
                 quitSound.Play();
+            }
+        }
+        // FOR HTML5 EXPORTS, COMMENT THIS OUT FOR OTHER EXPORTS
+        else if (@event is InputEventMouseButton)
+        {
+            if (!OS.WindowFullscreen)
+            {
+                OS.WindowFullscreen = true;
             }
         }
 

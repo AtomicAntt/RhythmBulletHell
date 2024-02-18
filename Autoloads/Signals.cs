@@ -8,4 +8,7 @@ public class Signals : Node
 
     [Signal]
     public delegate void GameOver();
+
+    [Signal]
+    public delegate void GameCompleted();
 }

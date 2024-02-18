@@ -27,8 +27,17 @@ public class Composer : AudioStreamPlayer
 
     public double time;
 
+    private Signals _signals;
+
+    [Export]
+    public int endSongTime = -1;
+
+    public bool mapCompleted = false;
+
     public override void _Ready()
     {
+        _signals = GetNode<Signals>("/root/Signals");
+
         secPerBeat = 60.0 / bpm;
     }
 
@@ -44,7 +53,7 @@ public class Composer : AudioStreamPlayer
         //     MakeEnemyShoot();
         // }
 
-        if (!Playing)
+        if (!Playing || mapCompleted)
         {
             return;
         }
@@ -52,6 +61,7 @@ public class Composer : AudioStreamPlayer
         time = OS.GetTicksMsec() - _timeBegin;
         time = (int)Math.Max(0.0d, time - _timeDelay);
 
+        
         // experiment and it might be a downer for performance
 
         CheckEnemyMovement((int)time);
@@ -80,6 +90,15 @@ public class Composer : AudioStreamPlayer
                 } 
             }
         }
+
+        if (time >= endSongTime)
+        {
+            mapCompleted = true;
+            _signals.EmitSignal("GameCompleted");
+
+            return;
+        }
+
     }
 
     // public void ReportBeat()

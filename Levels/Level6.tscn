@@ -1,0 +1,109 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://GameObjects/Enemy/Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://GameObjects/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI Assets/3.png" type="Texture" id=3]
+[ext_resource path="res://Music/homemade_vaporwave.mp3" type="AudioStream" id=4]
+[ext_resource path="res://GameObjects/Music/Music.tscn" type="PackedScene" id=5]
+[ext_resource path="res://GameObjects/Enemy/EnemyPosition.tscn" type="PackedScene" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 680.5, 5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 12.5, 258 )
+
+[node name="EasyVaporwave" type="Node2D"]
+pause_mode = 1
+
+[node name="Music" parent="." instance=ExtResource( 5 )]
+stream = ExtResource( 4 )
+bpm = 150.0
+endSongTime = 128062
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+
+[node name="Enemy" parent="." instance=ExtResource( 1 )]
+position = Vector2( -25, -202 )
+songPositions = PoolIntArray( 25662, 26462, 28062, 28862, 29662, 31262, 32062, 32862, 34462, 35262, 36062, 36462, 36662, 37062, 37262, 37662, 38062, 38262, 38462, 39262, 40862, 41662, 42462, 44062, 44862, 45662, 47262, 48062, 48862, 49262, 49462, 49862, 50062, 50462, 50862, 51062, 51262, 52062, 53662, 54462, 55262, 56862, 57662, 58462, 60062, 60862, 61662, 62062, 62262, 62662, 62862, 63262, 63662, 63862, 70462, 76862, 77662, 79262, 80062, 80862, 82462, 83262, 84062, 85662, 86462, 87262, 87662, 87862, 88262, 88462, 88862, 89262, 89462, 89662, 90462, 92062, 92862, 93662, 95262, 96062, 96862, 98462, 99262, 100062, 100462, 100662, 101062, 101262, 101662, 102062, 102262, 102462, 103262, 104862, 105662, 106462, 108062, 108862, 109662, 111262, 112062, 112862, 113262, 113462, 113862, 114062, 114462, 114862, 115062, 115262, 116062, 117662, 118462, 119262, 120862, 121662, 122462, 124062, 124862, 125662, 126062, 126262, 126662, 126862, 127262, 127662, 127862, 128062 )
+songPositions1 = PoolIntArray(  )
+songPositions2 = PoolIntArray(  )
+songPositions3 = PoolIntArray(  )
+songPositions4 = PoolIntArray(  )
+songPositions5 = PoolIntArray(  )
+songPositions6 = PoolIntArray(  )
+radius = 30
+rotationSpeed = 200
+state = 0
+
+[node name="Enemy2" parent="." instance=ExtResource( 1 )]
+position = Vector2( -366, -192 )
+songPositions = PoolIntArray( 12862, 14062, 14862, 15662, 16062, 16662, 17262, 18062, 18862, 19262, 19862, 20462, 21262, 22062, 22462, 23062, 23662, 24462, 24862, 25262, 26862, 27062, 27262, 27462, 27662, 28462, 28662, 28862, 30062, 30262, 30462, 30662, 30862, 31662, 31862, 32062, 33262, 33462, 33662, 33862, 34062, 34862, 35062, 35262, 36462, 37062, 37662, 38462, 39662, 39862, 40062, 40262, 40462, 41262, 41462, 41662, 42862, 43062, 43262, 43462, 43662, 44462, 44662, 44862, 46062, 46262, 46462, 46662, 46862, 47662, 47862, 48062, 49262, 49862, 50462, 51262, 52462, 52662, 52862, 53062, 53262, 54062, 54262, 54462, 55662, 55862, 56062, 56262, 56462, 57262, 57462, 57662, 58862, 59062, 59262, 59462, 59662, 60462, 60662, 60862, 62062, 62662, 63662, 70462, 78062, 78262, 78462, 78662, 78862, 79662, 79862, 80062, 81262, 81462, 81662, 81862, 82062, 82862, 83062, 83262, 84462, 84662, 84862, 85062, 85262, 86062, 86262, 86462, 87662, 88262, 88862, 89662, 90862, 91062, 91262, 91462, 91662, 92462, 92662, 92862, 94062, 94262, 94462, 94662, 94862, 96062, 97262, 97462, 97662, 97862, 98062, 98862, 99062, 99262, 100462, 101062, 101662, 102462, 103662, 103862, 104062, 104262, 104462, 105262, 105462, 105662, 106862, 107062, 107262, 107462, 107662, 108462, 108662, 108862, 110062, 110262, 110462, 110662, 110862, 111662, 111862, 112062, 113262, 113862, 114462, 115262, 116462, 116662, 116862, 117062, 117262, 118062, 118262, 118462, 119662, 119862, 120062, 120262, 120462, 121262, 121462, 121662, 122862, 123062, 123262, 123462, 123662, 124462, 124662, 124862, 126062, 126662, 127262, 128062 )
+songPositions1 = PoolIntArray( 16162, 19262, 22562, 25662, 28962, 32062, 37062, 37462, 41762, 44862, 49862, 50262, 54562, 57662, 62662, 63062, 64062, 70462, 80162, 83262, 88262, 88662, 92962, 95262, 101062, 101462, 105762, 108862, 113862, 114262, 119262, 121662, 124962, 128062 )
+songPositions2 = PoolIntArray( 36462, 36862, 37662, 38062, 49262, 49662, 50462, 50862, 62062, 62462, 63262, 63662, 87662, 88062, 88862, 89262, 100462, 100862, 101662, 102062, 113262, 113662, 114462, 114862 )
+songPositions3 = PoolIntArray( 12862, 16062, 19362, 22462, 25762, 28862, 32162, 35262, 38462, 41662, 44962, 48062, 51262, 54462, 57762, 60862, 76862, 80062, 84462, 86462, 89662, 92862, 96062, 99262, 102462, 105662, 108962, 112062, 115262, 118462, 121762, 124862 )
+songPositions4 = PoolIntArray(  )
+songPositions5 = PoolIntArray(  )
+songPositions6 = PoolIntArray(  )
+spiraling = true
+radius = 30
+rotationSpeed = 200
+spawnPointCount = 3
+shootingSelection = 3
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+stretch_mode = 2
+
+[node name="Positions" type="Node2D" parent="."]
+
+[node name="EnemyPosition" parent="Positions" groups=["1"] instance=ExtResource( 6 )]
+position = Vector2( -366, -192 )
+positionNumber = 1
+
+[node name="EnemyPosition2" parent="Positions" groups=["2"] instance=ExtResource( 6 )]
+position = Vector2( -366, 20 )
+positionNumber = 2
+
+[node name="EnemyPosition3" parent="Positions" groups=["3"] instance=ExtResource( 6 )]
+position = Vector2( -366, 242 )
+positionNumber = 3
+
+[node name="EnemyPosition4" parent="Positions" groups=["4"] instance=ExtResource( 6 )]
+position = Vector2( 364, -202 )
+positionNumber = 4
+
+[node name="EnemyPosition5" parent="Positions" groups=["5"] instance=ExtResource( 6 )]
+position = Vector2( 364, 10 )
+positionNumber = 5
+
+[node name="EnemyPosition6" parent="Positions" groups=["6"] instance=ExtResource( 6 )]
+position = Vector2( 364, 232 )
+positionNumber = 6
+
+[node name="Boundary" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary"]
+position = Vector2( -8.5, -192 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Boundary"]
+position = Vector2( 6, 269 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundary"]
+position = Vector2( -480.5, 61 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Boundary"]
+position = Vector2( 480, 61 )
+shape = SubResource( 2 )
