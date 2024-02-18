@@ -112,6 +112,23 @@ public class Enemy : Node2D
         }
     }
 
+    [Export]
+    public int [] switchToNormalIndex = {-1};
+
+    public void CheckSwitchToNormal(int posIndex)
+    {
+        if (switchToNormalIndex.Length <= 0)
+        {
+            return;
+        }
+
+        if (switchToNormalIndex.Contains(posIndex))
+        {
+            spiraling = false;
+            shootingSelection = ShootingSelection.NORMAL;
+        }
+    }
+
 
 
     public class SongPosition

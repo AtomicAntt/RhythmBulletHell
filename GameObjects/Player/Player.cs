@@ -53,6 +53,7 @@ public class Player : KinematicBody2D
             {
                 state = States.DEAD;
                 _animatedSprite.Play("Destroyed");
+                _animatedSprite.Scale = new Vector2(0.5f,0.5f);
                 _signals.EmitSignal("GameOver");
             }
 

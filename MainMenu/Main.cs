@@ -135,11 +135,15 @@ public class Main : Control
         gameOverUI.Visible = false;
         gameCompletedUI.Visible = false;
         SetHealth(100);
+
+        clickPlaySound.Play();
     }
 
     public void _on_QuitToSongSelect_pressed()
     {
         BackToSongSelect();
+
+        clickPlaySound.Play();
     }
 
     public void _on_BackToMainMenu_pressed()
