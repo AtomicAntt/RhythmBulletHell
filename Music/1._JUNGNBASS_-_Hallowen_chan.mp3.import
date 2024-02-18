@@ -11,5 +11,5 @@ dest_files=[ "res://.import/1._JUNGNBASS_-_Hallowen_chan.mp3-fe5c0b2ab1b378904b2
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

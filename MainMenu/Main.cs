@@ -28,6 +28,8 @@ public class Main : Control
 
     private Node2D _levelInstance; // Current Node2D scene that will be under _levels
 
+    public String currentLevel;
+
     // ----------- Initialized menu references that may need to be shown or hidden ----------
 
     private Control _mainMenu;
@@ -39,7 +41,8 @@ public class Main : Control
     // ---------- Initialized Game UI references ----------
 
     public Control gameUI;
-    public Control pauseUI;
+    public Control gameOverUI;
+    public Control songSelectUI;
     public TextureProgress healthBar;
     public TextureProgress damageBar;
     public Label healthLabel;
@@ -77,8 +80,10 @@ public class Main : Control
         _settingsPanel = GetNode<Panel>("Settings/SettingsPanel");
         _settingsBackground = GetNode<ColorRect>("Settings/SettingsBackground");
 
+        songSelectUI = GetNode<Control>("SongSelect");
+
         gameUI = GetNode<Control>("Levels/CanvasLayer/GameUI");
-        pauseUI = GetNode<Control>("Levels/CanvasLayer/PauseUI");
+        gameOverUI = GetNode<Control>("Levels/CanvasLayer/GameOverUI");
         healthBar = GetNode<TextureProgress>("Levels/CanvasLayer/GameUI/VBoxContainer/HealthBar");
         damageBar = GetNode<TextureProgress>("Levels/CanvasLayer/GameUI/VBoxContainer/HealthBar/DamageBar");
         healthLabel = GetNode<Label>("Levels/CanvasLayer/GameUI/VBoxContainer/HealthLabel");
@@ -88,6 +93,7 @@ public class Main : Control
         _signals = GetNode<Signals>("/root/Signals");
 
         _signals.Connect("UpdateHealth", this, "SetHealth");
+        _signals.Connect("GameOver", this, "SetGameOver");
 
         // Load values like settings that were set.
         _saves.LoadGame();
@@ -96,7 +102,63 @@ public class Main : Control
         mainMenuMusic.Play();
     }
 
-    // ---------- GAME UI HANDLING ----------
+    // ---------- GAME HANDLING ----------
+
+    public void SetGameOver()
+    {
+        gameOverUI.Visible = true;
+        foreach (Composer music in GetTree().GetNodesInGroup("GameMusic"))
+        {
+            music.Stop();
+        }
+    }
+
+    public void _on_RestartButton_pressed()
+    {
+        LoadLevel(currentLevel);
+        gameOverUI.Visible = false;
+        SetHealth(100);
+    }
+
+    public void _on_QuitToSongSelect_pressed()
+    {
+        BackToSongSelect();
+    }
+
+    public void _on_BackToMainMenu_pressed()
+    {
+        songSelectUI.Visible = false;
+
+        _mainMenu.Visible = true;
+    }
+
+    public void _on_SongSelectButton_pressed(String levelName)
+    {
+        LoadLevel(levelName);
+
+        _mainMenu.Visible = false;
+        songSelectUI.Visible = false;
+        _settings.Visible = false;
+
+        gameUI.Visible = true;
+        mainMenuMusic.Stop();
+        clickPlaySound.Play();
+        gameState = GameStates.ACTIVE;
+    }
+
+    public void BackToSongSelect()
+    {
+        UnloadLevel();
+
+        SetHealth(100);
+
+        songSelectUI.Visible = true;
+        gameOverUI.Visible = false;
+
+        gameUI.Visible = false;
+        mainMenuMusic.Play();
+        gameState = GameStates.INACTIVE;
+    }
 
     public void SetHealth(int value)
     {
@@ -133,6 +195,8 @@ public class Main : Control
             _levelInstance = levelResource.Instance<Node2D>();
             _levels.AddChild(_levelInstance);
         }
+
+        currentLevel = levelName;
     }
 
 	// ---------- Methods to handle tween animations ----------
@@ -147,11 +211,16 @@ public class Main : Control
 
     public void _on_StartButton_pressed()
     {
-        LoadLevel("Level2");
-        gameUI.Visible = true;
-        mainMenuMusic.Stop();
-        clickPlaySound.Play();
-        gameState = GameStates.ACTIVE;
+        // LoadLevel("Level1");
+        // gameUI.Visible = true;
+        // mainMenuMusic.Stop();
+        // clickPlaySound.Play();
+        // gameState = GameStates.ACTIVE;
+
+        _mainMenu.Visible = false;
+        _settings.Visible = false;
+
+        songSelectUI.Visible = true;
     }
 
     public void _on_QuitButton_pressed()

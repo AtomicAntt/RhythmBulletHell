@@ -52,6 +52,7 @@ public class Player : KinematicBody2D
             {
                 state = States.DEAD;
                 _animatedSprite.Play("Destroyed");
+                _signals.EmitSignal("GameOver");
             }
 
             GD.Print("I got " + health + " left!");
@@ -215,7 +216,10 @@ public class Player : KinematicBody2D
                 break;
         }
 
-        velocity = MoveAndSlide(velocity);
+        if (state != States.DEAD)
+        {
+            velocity = MoveAndSlide(velocity);
+        }
     }
 
 }

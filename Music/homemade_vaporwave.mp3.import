@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/homemade_vaporwave.mp3-b63fc48d286d6098684c52bd4a80b4d0.mp3str"
+
+[deps]
+
+source_file="res://Music/homemade_vaporwave.mp3"
+dest_files=[ "res://.import/homemade_vaporwave.mp3-b63fc48d286d6098684c52bd4a80b4d0.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
