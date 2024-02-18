@@ -174,13 +174,15 @@ public class Enemy : Node2D
 
     public override void _Ready()
     {
-        player = GetTree().GetNodesInGroup("Player")[0] as Player;
+        // player = GetTree().GetNodesInGroup("Player")[0] as Player;
 
         _rotater = GetNode<Node2D>("Rotater");
 
         PlaceSpiralPositions(spawnPointCount);
 
         forwardDirection = new Vector2(1, 0).Rotated(Rotation);
+
+        player = GetTree().GetNodesInGroup("Player")[0] as Player;
     }
 
     public override void _PhysicsProcess(float delta)
@@ -197,6 +199,10 @@ public class Enemy : Node2D
                 if (IsInstanceValid(player))
                 {
                     GlobalPosition = new Vector2(player.GlobalPosition.x, GlobalPosition.y);
+                }
+                else
+                {
+                    player = GetTree().GetNodesInGroup("Player")[0] as Player; // why i need this
                 }
                 break;
             case States.IDLE:
