@@ -3,6 +3,8 @@ Bullet hell where you dodge flaming projectiles to the beat!
 
 Game link: https://atomicant.itch.io/blazing-beatz
 
+Rating link: https://itch.io/jam/rhythm-jam-2024/rate/2535561
+
 Made with Godot Engine v3.5.3
 
 # Building and Running the game
