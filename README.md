@@ -1,5 +1,5 @@
 # RhythmBulletHell
-Bullet hell where you dodge flaming projectiles to the beat!
+Bullet hell rhythm game where you dodge flaming projectiles to the beat!
 
 Game link: https://atomicant.itch.io/blazing-beatz
 
